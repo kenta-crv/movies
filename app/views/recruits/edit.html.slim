@@ -1,0 +1,27 @@
+table.company[width="100%"]
+  = form_for([@company, @recruit]) do |f|
+    tbody
+      tr 
+        th[colspan="10"]
+          | 求人
+      tr.ceter
+        th 事業内容
+        td  = f.date_field :year
+        th 給与
+        td  = f.number_field :salary
+        th 雇用形態
+        td  = f.select(:employment_status,[\
+              ["選択してください","選択してください"],
+              ["正社員","正社員"],
+              ["契約社員","契約社員"],
+              ["アルバイト","アルバイト"],
+              ["業務委託","業務委託"],
+              ["その他","その他"],
+        ])
+        th ポイント
+        td  = f.text_field :sales_point
+        th 求人内容
+        td  = f.text_area :body
+      tr
+        td[colspan="10"]
+          = f.submit "登録"

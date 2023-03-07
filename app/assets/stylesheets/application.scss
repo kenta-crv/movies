@@ -21,9 +21,9 @@
  // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
- $main_color: #327BEE;
- $sub_color: #327BEE;
- $asort_color: #327BEE;
+ $main_color: #241363;
+ $sub_color: #241363;
+ $asort_color: #B71AB3;
 
  body {
    font-family: "ヒラギノ角ゴ Pro W3";
@@ -195,7 +195,7 @@
      @media screen and ( max-width:479px ){font-size:2.0rem;}
    }
    .border-line {
-     height:30px;
+     height:40px;
      background-color:$main_color;
    }
    .height {
@@ -433,8 +433,8 @@ table.company {
    width: 90%;
    margin: 0 auto;
    border-collapse: separate;
-   border-spacing: 0px 15px;
-   font-size: 1.5vw;
+   border-spacing: 0px 10px;
+   font-size: 1.0vw;
    img{ width:100px;
    @media screen and ( max-width:479px ){width:40px;}}
    th, td { padding: 10px; }
@@ -447,7 +447,6 @@ table.company {
       position: relative;
       color: #fff;
       font-weight: normal;
-      font-size: 2.0vw;
       @media screen and ( max-width:479px ){
           font-size:15px;
           text-align: center; }
@@ -470,6 +469,7 @@ table.company {
       }
    td {
       background: #f4f4f4;
+      text-align:center;
       }
    th.review-index-text{
      font-size:14px;
@@ -484,7 +484,7 @@ table.company {
 
  /*hr*/
  .line {
-     height:5px;
+     height:1px;
      background: $main_color;
      background-image: -webkit-linear-gradient(left, #eee, $main_color, #eee);
      background-image: -moz-linear-gradient(left, #eee, $main_color, #eee);
@@ -721,73 +721,90 @@ table.company {
 
 /*posts show*/
 #review-detail{
-	margin:-10px 20px;
-	 .headline-first {
+  margin:-10px 20px;
+   .headline-first {
        color:black;
        font-weight:bold;
-			 font-size:3.0rem;
-			 @media screen and ( max-width:479px ){font-size:2.0rem;}
-	    }
-	 .headline-first:first-letter {
-       color:$main_color;
        font-size:3.5rem;
-			 @media screen and (max-width:479px ){fint-size:1.8rem;}
+       margin-top:50px;
+       margin-bottom:30px;
+       @media screen and ( max-width:479px ){font-size:2.0rem;}
+      }
+   .headline-first:first-letter {
+       color:$asort_color;
+       font-size:4.0rem;
+       @media screen and (max-width:479px ){fint-size:1.8rem;}
        }
 
-    h2 {
-		padding: 0.6em 0.6em;/*文字の上下 左右の余白*/
-		color: #494949;/*文字色*/
-		background: #f4f4f4;/*背景色*/
-		border-left: solid 5px $main_color;/*左線*/
-		border-bottom: solid 3px #d7d7d7;/*下線*/
-		text-align:left;
-		padding-left:30px;
-		margin:0px auto;
-		width:95%;
-		font-size:21px;
-		font-weight:bold;
-    }
+   h2 {
+       color:black;
+       font-weight:bold;
+       font-size:3.0rem;
+       margin-top:50px;
+       @media screen and ( max-width:479px ){font-size:2.0rem;}
+      }
+   h2.before {
+       color:$asort_color;
+       font-size:3.5rem;
+       @media screen and (max-width:479px ){fint-size:1.8rem;}
+       }
 
     h3 {
-		padding: 0.6em 0.6em;/*文字の上下 左右の余白*/
-		color: #494949;/*文字色*/
-		background: #f4f4f4;/*背景色*/
-		border-left: solid 5px $main_color;/*左線*/
-		border-bottom: solid 3px #d7d7d7;/*下線*/
-		text-align:left;
-		padding-left:30px;
-		margin:0px auto;
-		width:95%;
-		font-size:21px;
-		font-weight:bold;
-    }
-     h4 {
         position: relative;
         display: inline-block;
         padding: 0 55px;
-        font-size:20px;
+        font-size:2.5rem;
         font-weight:bold;
         text-align:left;
         padding-left:70px;
+        margin-top:50px;
        }
-     h4:before, h4:after {
+    h3:before, h4:after {
         content: '';
         position: absolute;
         top: 50%;
         display: inline-block;
         width: 45px;
         height: 2px;
-        border-top: solid 2px $main_color;
-        border-bottom: solid 2px $main_color;
+        border-top: solid 2px $asort_color;
+        border-bottom: solid 2px $asort_color;
         }
-     h4:before {
+    h3:before {
        left:0;
         }
-     h4:after {
+    h3:after {
         right: 0;
         }
+
+    h4 {
+        position: relative;
+        display: inline-block;
+        padding: 0 55px;
+        font-size:2.0rem;
+        font-weight:bold;
+        text-align:left;
+        padding-left:70px;
+        margin-top:50px;
+       }
+    h4:before, h4:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        width: 45px;
+        height: 2px;
+        border-top: solid 2px $asort_color;
+        border-bottom: solid 2px $asort_color;
+        }
+    h4:before {
+       left:0;
+        }
+    h4:after {
+        right: 0;
+        }
+    
     h5 {
-       color: $main_color;
+       color: $asort_color;
        margin-left:60px;
        border: dotted $main_color 2px;/*ドット 色 太さ*/
        padding: 0.5em 0.5em 0.5em 2em;
@@ -800,6 +817,23 @@ table.company {
       line-height:1.7vem;
       text-align:left;
       font-size:16px;
+    }
+    .show-title {
+      margin-top:10px;
+      margin-bottom:20px;
+      font-size:20px;
+      font-weight:bold;
+    }
+    .award{
+      margin-top:50px;
+      text-align:center;
+    }
+    .red-bold {
+      margin-left:13px;
+      margin-top:10px;
+      color:red;
+      font-size:18px;
+      font-weight:bold;
     }
 
  }
@@ -849,20 +883,42 @@ ul {
   color: #668ad8;/*文字色*/
   background: #f1f8ff; /*背景色*/
   padding: 0.5em 0.5em 0.5em 2em;
-  margin-left:20px;
+  margin-left:40px;
 
   ul li {
     line-height: 2.5;
     padding: 0.5em 0;
-    font-size:20px;
   }
 
   li {
     list-style:none;
-
+    padding-left: 2.0em;
+    h2 {font-size:16px; padding-left:10px;}
+    h3 {font-size:15px; padding-left:10px;}
+    h4 {font-size:14px; padding-left:20px;}
   }
-
-  li h2 {size:20px; padding-left:0px;}
-  h3 {font-size:14px; padding-left:10px;}
-  h3 {font-size:12px; padding-left:20px;}
 }
+
+.companies-index {
+  padding-left:30px;
+  .image-index {
+    height:"150px";
+  }
+  .company{
+    text-decoration: none;
+    color:#333;
+    font-size:30px;
+    font-weight:bold;
+  }
+  .edit{
+    text-decoration: none;
+    color:#666;
+    font-size:15px;
+    font-weight:bold;
+  }
+  .introdution-index{
+    text-decoration: none;
+    color:black;
+    font-size:14px;
+  }
+  }

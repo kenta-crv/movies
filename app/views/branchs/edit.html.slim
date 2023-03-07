@@ -1,0 +1,16 @@
+table.company[width="100%"]
+  = form_for([@company, @branch]) do |f|
+    tbody
+      tr 
+        th[colspan="6"]
+          | 支店
+      tr.ceter
+        th 支店名
+        td  = f.text_field :name
+        th 電話番号
+        td  = f.telephone_field :tel
+        th　住所
+        td = f.text_field :address
+      tr
+        td[colspan="6"]
+          = f.submit "登録"

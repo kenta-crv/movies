@@ -1,0 +1,14 @@
+table.company[width="100%"]
+  = form_for([@company, @business]) do |f|
+    tbody
+      tr 
+        th[colspan="4"]
+          | 事業内容
+      tr.ceter
+        th 事業内容
+        td  = f.text_field :title
+        th 事業詳細
+        td  = f.text_area :body
+      tr
+        td[colspan="4"]
+          = f.submit "登録"

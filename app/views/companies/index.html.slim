@@ -1,0 +1,26 @@
+- set_meta_tags  title: 'IT・ベンチャー企業の会社情報を参照するならENGIST'
+- set_meta_tags  description: 'IT・ベンチャー企業の会社情報を参照するならENGIST'
+h1.headline
+ | IT・ベンチャー企業記事一覧
+.companies-index
+  - @companies.each do |company|
+   .row
+    .col-sm-3
+      = link_to company_path(company.id)do 
+       = image_tag company.rogo.to_s, class:"image-index"
+    .col-sm-8  
+       = link_to company.co, company_path(company.id), class:"company"
+       - if admin_signed_in?
+               | （
+               = link_to '編集  ', edit_company_path(company.id),class:"edit"
+               = link_to '削除',
+                company_path(company),
+                method: :delete,
+                class:"edit",
+                data: { confirm: '本当に削除しますか？'}
+               | ）
+       br
+       br
+       /= link_to company.introduction, company_path(company.id), class: "introdution-index"
+    hr.line
+ 

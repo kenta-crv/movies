@@ -5,16 +5,14 @@ html
   header
    .row
      .col-xs-3
-       = link_to "https://eatery-japan.com/" do
+       = link_to "/" do
         = image_tag 'rogo.webp',  class:"menu", alt:"eatery japanロゴ"
      .col-xs-6
-       .search2.center.height
-        = search_form_for @q do |f|
-         = f.search_field :title_cont, type: "text", class:"window"
-         = f.submit "検索", class:"submit-button"
+       /.search2.center.height
+        /= search_form_for @q do |f|
+         /= f.search_field :co_cont, type: "text", class:"window"
+         /= f.submit "検索", class:"submit-button"
      .col-xs-3
-         = link_to "https://xn--new351c2sh.net/estimates/new", target:"_blank" do
-           = image_tag "estimate.webp", width:"220px"
    .row.navi
     .col-xs-.border-line
 
@@ -22,9 +20,6 @@ html
   br
   br
   body
-   .row
-    .col-sm-12
-
    .row
     .col-sm-8
      = yield

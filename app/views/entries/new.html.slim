@@ -1,0 +1,53 @@
+- set_meta_tags noindex: true
+
+.tops-wrapper
+br
+  h2.headline  新着記事作成
+= form_for @entry do |f|
+   table.entry
+     tbody
+      tr
+        th.arrow_box 会社名
+        td = f.text_field :co
+        th.arrow_box ロゴ
+        td = f.file_field :rogo
+      tr
+        th.arrow_box  電話番号
+        td = f.phone_field :tel
+        th.arrow_box  URL
+        td = f.url_field :url
+      tr
+        th.arrow_box 郵便番号
+        td = f.text_field :postnumber
+        th.arrow_box 住所
+        td = f.text_field :address
+      tr
+        th.arrow_box 資本金
+        td = f.text_field :caption
+        th.arrow_box 従業員数
+        td = f.text_field :people
+   table.entry
+     tbody
+      tr
+        th.arrow_box アワード
+      tr
+        td = f.text_area :award
+      tr
+        th.arrow_box イントロダクション
+      tr
+        td = f.text_area :introduction
+      tr
+        th.arrow_box ビジネスコンテンツ
+      tr
+        td = f.text_area :business_content
+      tr
+        th.arrow_box プロスペクト
+      tr
+        td = f.text_area :prospect
+      tr
+        td[colspan="4"] 
+         = f.submit '投稿する'
+
+script
+  | var editor = new FroalaEditor('#entry')
+

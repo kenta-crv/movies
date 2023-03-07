@@ -1,0 +1,12 @@
+table.company[width="100%"]
+  = form_for([@company, @culture]) do |f|
+    tbody
+      tr 
+        th
+          | 社風
+      tr.ceter
+        td
+          = f.text_area :body
+      tr
+        td
+          = f.submit "登録"

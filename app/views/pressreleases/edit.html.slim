@@ -1,0 +1,14 @@
+table.company[width="100%"]
+  = form_for([@company, @pressrelease]) do |f|
+    tbody
+      tr 
+        th[colspan="4"]
+          | プレスリリース
+      tr.ceter
+        th 年月日
+        td  = f.date_field :year
+        th 内容
+        td  = f.text_area :body
+      tr
+        td[colspan="4"]
+          = f.submit "登録"

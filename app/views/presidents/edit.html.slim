@@ -1,0 +1,14 @@
+table.company[width="100%"]
+  = form_for([@company, @president]) do |f|
+    tbody
+      tr 
+        th[colspan="4"]
+          | 代表経歴
+      tr.ceter
+        td
+          = f.file_field :face
+        td
+          = f.text_area :body
+      tr
+        td[colspan="4"]
+          = f.submit "登録"
