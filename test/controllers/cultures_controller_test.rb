@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CalturesControllerTest < ActionDispatch::IntegrationTest
+class CulturesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
