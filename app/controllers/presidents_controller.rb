@@ -42,6 +42,7 @@ class PresidentsController < ApplicationController
     private
      def president_params
        params.require(:president).permit(
+        :face,
         :body
       )
      end

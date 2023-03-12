@@ -123,12 +123,12 @@
     | 代表取締役：奥山健太氏について
   .body-base
     .row
-     - @company.presidents.each do |president|
-      .col-sm-4.center
-       - if @company.presidents.face?
+     - if @company.presidents.any?
+      - @company.presidents.all.reverse_order.each do |president|
+        .col-sm-4.center
          .image_company  
-          = image_tag @company.presidents.face.url, width:"200px"
-      .col-sm-8
+          = image_tag president.face.url, width:"200px"
+        .col-sm-8
           = president.body
           = link_to "編集", edit_company_president_path(@company, president), _blank: "target"
           = link_to "削除", company_president_path(@company, president), method: :delete, data: {confirm:"本当に削除しますか？"}
