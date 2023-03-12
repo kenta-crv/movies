@@ -139,7 +139,7 @@
   - @company.businesses.each do |business|
    h3 
     = business.title
-   p
+   p.center
     = business.body
     = link_to "編集", edit_company_business_path(@company, business), _blank: "target"
     = link_to "削除", company_business_path(@company, business), method: :delete, data: {confirm:"本当に削除しますか？"}
@@ -169,11 +169,11 @@ hr.line
         th.arrow_box 雇用形態
         th.arrow_box 求人内容
         th.arrow_box セールスポイント
-      tr
       - @company.recruits.each do |recruit|
+       tr
         td = recruit.year
         td = recruit.salary
-        td = recruit.occupation
+        td = recruit.employment_status
         td = recruit.body
         td = recruit.sales_point
            = link_to "編集", edit_company_recruit_path(@company, recruit), _blank: "target"
@@ -186,11 +186,16 @@ hr.line
 #review-detail
   .headline-first.center#display_heading_2
     | #{@company.co}の評判は？
-    .body-base
+  .body-base
+   table.company
     - @company.reviews.each do |review|
-          = review.body
-          = link_to "編集", edit_company_review_path(@company, review), _blank: "target"
-          = link_to "削除", company_review_path(@company, review), method: :delete, data: {confirm:"本当に削除しますか？"}
+     tr 
+       th
+         = review.year 
+       td
+         = review.body
+         = link_to "編集", edit_company_review_path(@company, review), _blank: "target"
+         = link_to "削除", company_review_path(@company, review), method: :delete, data: {confirm:"本当に削除しますか？"}     
 br/
 hr.line
 
@@ -210,10 +215,15 @@ hr.line
   .headline-first.center#display_heading_2
     | #{@company.co}の実績
   .body-base
+   table.company
     - @company.awards.each do |award|
-          = award.body
-          = link_to "編集", edit_company_award_path(@company, award), _blank: "target"
-          = link_to "削除", company_award_path(@company, award), method: :delete, data: {confirm:"本当に削除しますか？"}
+     tr 
+       th
+         = award.year 
+       td
+         = award.body
+         = link_to "編集", edit_company_award_path(@company, award), _blank: "target"
+         = link_to "削除", company_award_path(@company, award), method: :delete, data: {confirm:"本当に削除しますか？"}   
 br/
 hr.line
 

@@ -86,18 +86,6 @@ table.company[width="100%"]
         td
           = f.submit "登録"
 table.company[width="100%"]
-  = form_for([@company, @introduction]) do |f|
-    tbody
-      tr 
-        th
-          | 
-      tr.ceter
-        td
-          = f.text_area :body
-      tr
-        td
-          = f.submit "登録"
-table.company[width="100%"]
   = form_for([@company, @recruit]) do |f|
     tbody
       tr 
@@ -125,11 +113,11 @@ table.company[width="100%"]
         td[colspan="10"]
           = f.submit "登録"
 table.company[width="100%"]
-  = form_for([@company, @history]) do |f|
+  = form_for([@company, @review]) do |f|
     tbody
       tr 
         th[colspan="4"]
-          | 沿革
+          | 評判
       tr.ceter
         th 年月日
         td  = f.date_field :year
@@ -139,11 +127,11 @@ table.company[width="100%"]
         td[colspan="4"]
           = f.submit "登録"
 table.company[width="100%"]
-  = form_for([@company, @achivement]) do |f|
+  = form_for([@company, @death]) do |f|
     tbody
       tr 
         th[colspan="4"]
-          | 実績
+          | ブラック？やばい？
       tr.ceter
         th 年月日
         td  = f.date_field :year
