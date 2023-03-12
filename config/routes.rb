@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :companies do 
       resources :introductions #概要
       resources :larges #上場
-      resources :branchs #支店
+      resources :branches #支店
       resources :histories #沿革
       resources :presidents #代表歴
       resources :businesses #事業内容

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_06_074230) do
+ActiveRecord::Schema.define(version: 2023_03_06_090910) do
 
   create_table "achivements", force: :cascade do |t|
     t.integer "company_id"
@@ -153,6 +153,14 @@ ActiveRecord::Schema.define(version: 2023_03_06_074230) do
     t.string "concept"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cultures", force: :cascade do |t|
+    t.integer "company_id"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_cultures_on_company_id"
   end
 
   create_table "deaths", force: :cascade do |t|

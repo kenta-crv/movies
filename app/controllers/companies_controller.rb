@@ -26,6 +26,7 @@ class CompaniesController < ApplicationController
         @award = Award.new
         @branch = Branch.new
         @business = Business.new
+        @culture = Culture.new
         @achivement = Achivement.new
         @history = History.new
         @introduction = Introduction.new

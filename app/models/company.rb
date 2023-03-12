@@ -1,7 +1,7 @@
 class Company < ApplicationRecord
     mount_uploader :rogo, ImagesUploader
     has_many :introductions #概要
-    has_many :branchs #支店
+    has_many :branches #支店
     has_many :histories #沿革
     has_many :presidents #代表歴
     has_many :businesses #事業内容
