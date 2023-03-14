@@ -43,6 +43,7 @@ class PressreleasesController < ApplicationController
      def pressrelease_params
        params.require(:pressrelease).permit(
         :year,
+        :title,
         :body
       )
      end

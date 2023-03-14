@@ -43,6 +43,7 @@ class DeathsController < ApplicationController
      def death_params
        params.require(:death).permit(
         :year,
+        :title,
         :body
       )
      end

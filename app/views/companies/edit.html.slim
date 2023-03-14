@@ -46,11 +46,25 @@ table.company[width="100%"]
         td[colspan="4"]
           = f.submit "登録"
 table.company[width="100%"]
+  = form_for([@company, @exective]) do |f|
+    tbody
+      tr 
+        th[colspan="4"]
+          | 役員一覧
+      tr.ceter
+        td
+          = f.file_field :position
+        td
+          = f.text_area :name
+      tr
+        td[colspan="4"]
+          = f.submit "登録"
+table.company[width="100%"]
   = form_for([@company, @president]) do |f|
     tbody
       tr 
         th[colspan="4"]
-          | 代表経歴
+          | 代表者経歴
       tr.ceter
         td
           = f.file_field :face
@@ -116,57 +130,65 @@ table.company[width="100%"]
   = form_for([@company, @review]) do |f|
     tbody
       tr 
-        th[colspan="4"]
+        th[colspan="6"]
           | 評判
       tr.ceter
         th 年月日
         td  = f.date_field :year
+        th タイトル
+        td  = f.text_field :title
         th 内容
         td  = f.text_field :body
       tr
-        td[colspan="4"]
+        td[colspan="6"]
           = f.submit "登録"
 table.company[width="100%"]
   = form_for([@company, @death]) do |f|
     tbody
       tr 
-        th[colspan="4"]
+        th[colspan="6"]
           | ブラック？やばい？
       tr.ceter
         th 年月日
         td  = f.date_field :year
+        th タイトル
+        td  = f.text_field :title
         th 内容
         td  = f.text_area :body
       tr
-        td[colspan="4"]
+        td[colspan="6"]
           = f.submit "登録"
 table.company[width="100%"]
   = form_for([@company, @award]) do |f|
     tbody
       tr 
-        th[colspan="4"]
+        th[colspan="6"]
           | 実績
       tr.ceter
         th 年月日
         td  = f.date_field :year
+        th タイトル
+        td  = f.text_field :title
         th 内容
         td  = f.text_area :body
       tr
-        td[colspan="4"]
+        td[colspan="6"]
           = f.submit "登録"
 table.company[width="100%"]
   = form_for([@company, @pressrelease]) do |f|
     tbody
       tr 
-        th[colspan="4"]
+        th[colspan="6"]
           | プレスリリース
       tr.ceter
         th 年月日
         td  = f.date_field :year
+        th URL
+        td  = f.url_field :url
         th 内容
         td  = f.text_area :body
       tr
-        td[colspan="4"]
+        td[colspan="6"]
           = f.submit "登録"
 table.company[width="100%"]
   = form_for([@company, @prospect]) do |f|

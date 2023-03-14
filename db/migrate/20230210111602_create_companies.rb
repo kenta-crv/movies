@@ -15,6 +15,9 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :business #事業内容
       #t.string :market #上場可否
       t.string :concept #コンセプト
+      t.string :only_president #代表取締役
+      t.string :settlement #決算日
+      t.string :sales #売上高
       #給与は1:n/最新給与からランキング化
       t.timestamps
     end

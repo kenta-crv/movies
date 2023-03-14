@@ -4,8 +4,8 @@
       tr
         th.arrow_box 会社名
         td = f.text_field :co
-        th.arrow_box ロゴ
-        td = f.file_field :rogo
+        th.arrow_box 代表取締役
+        td = f.text_field :only_president
       tr
         th.arrow_box  電話番号
         td = f.telephone_field :tel
@@ -24,14 +24,19 @@
         
       tr
         th.arrow_box 資本金
-        td = f.number_field :caption
+        td = f.text_field :caption
         th.arrow_box 従業員数
-        td = f.number_field :people
+        td = f.text_field :people
+      tr
+        th.arrow_box 売上高
+        td = f.text_field :sales
+        th.arrow_box 決算日
+        td = f.text_field :settlement
       tr
         th.arrow_box 業種
         td = f.text_field :industry
-        th.arrow_box 事業内容
-        td = f.text_field :business
+        th.arrow_box ロゴ
+        td = f.file_field :rogo
       tr
         td[colspan="4"] 
          = f.submit '投稿する'

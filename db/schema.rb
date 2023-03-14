@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_06_090910) do
+ActiveRecord::Schema.define(version: 2023_03_14_143941) do
 
   create_table "achivements", force: :cascade do |t|
     t.integer "company_id"
@@ -59,14 +59,6 @@ ActiveRecord::Schema.define(version: 2023_03_06_090910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_businesses_on_company_id"
-  end
-
-  create_table "caltures", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_caltures_on_company_id"
   end
 
   create_table "columns", force: :cascade do |t|
@@ -151,6 +143,9 @@ ActiveRecord::Schema.define(version: 2023_03_06_090910) do
     t.string "industry"
     t.string "business"
     t.string "concept"
+    t.string "only_president"
+    t.string "settlement"
+    t.string "sales"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -165,6 +160,7 @@ ActiveRecord::Schema.define(version: 2023_03_06_090910) do
 
   create_table "deaths", force: :cascade do |t|
     t.integer "company_id"
+    t.date "year"
     t.string "title"
     t.string "body"
     t.datetime "created_at", null: false
@@ -189,6 +185,15 @@ ActiveRecord::Schema.define(version: 2023_03_06_090910) do
     t.string "desired_period"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "executives", force: :cascade do |t|
+    t.integer "company_id"
+    t.string "position"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_executives_on_company_id"
   end
 
   create_table "histories", force: :cascade do |t|
@@ -220,6 +225,7 @@ ActiveRecord::Schema.define(version: 2023_03_06_090910) do
   create_table "pressreleases", force: :cascade do |t|
     t.integer "company_id"
     t.date "year"
+    t.string "url"
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -249,6 +255,7 @@ ActiveRecord::Schema.define(version: 2023_03_06_090910) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "company_id"
+    t.date "year"
     t.string "title"
     t.string "body"
     t.datetime "created_at", null: false

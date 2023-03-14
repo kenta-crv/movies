@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :histories #沿革
       resources :presidents #代表歴
       resources :businesses #事業内容
+      resources :executives #役員一覧
       resources :cultures #社風
       resources :recruits #求人
       resources :awards #表彰

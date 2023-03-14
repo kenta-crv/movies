@@ -26,9 +26,12 @@ class CompaniesController < ApplicationController
         @award = Award.new
         @branch = Branch.new
         @business = Business.new
+        @executive = Executive.new
         @culture = Culture.new
+        @death = Death.new
         @achivement = Achivement.new
         @history = History.new
+        @review = Review.new
         @introduction = Introduction.new
         @president = President.new
         @pressrelease = Pressrelease.new
@@ -70,6 +73,9 @@ class CompaniesController < ApplicationController
           :industry, #業種
           :business, #事業内容
           :market, #上場可否
+          :only_president, #代表取締役
+          :settlement, #決算日
+          :sales
           )
       end
     end

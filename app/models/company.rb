@@ -5,6 +5,7 @@ class Company < ApplicationRecord
     has_many :histories #沿革
     has_many :presidents #代表歴
     has_many :businesses #事業内容
+    has_many :executives #役員一覧
     has_many :cultures #社風
     has_many :recruits #求人
     has_many :awards #表彰

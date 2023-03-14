@@ -3,6 +3,7 @@ class CreatePressreleases < ActiveRecord::Migration[5.2]
     create_table :pressreleases do |t|
       t.references :company, foreign_key: true
       t.date :year
+      t.string :url
       t.string :body
       t.timestamps
     end
