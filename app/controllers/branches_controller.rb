@@ -1,4 +1,4 @@
-class BranchsController < ApplicationController
+class BranchesController < ApplicationController
     before_action :load_company
     before_action :load_branch, only: [:edit,:update,:show,:destroy]
     #before_action :authenticate_user!
@@ -16,7 +16,7 @@ class BranchsController < ApplicationController
     end
   
     def create
-      @branch = @company.branchs.new(branch_params)
+      @branch = @company.branches.new(branch_params)
       if @branch.save
         redirect_to company_path(@company)
       end
@@ -24,14 +24,14 @@ class BranchsController < ApplicationController
   
     def destroy
       @company = Company.find(params[:company_id])
-      @branch = @company.branchs.find(params[:id])
+      @branch = @company.branches.find(params[:id])
       @branch.destroy
       redirect_to company_path(@company)
     end
   
      def update
       @branch = Branch.find(params[:company_id])
-      @branch = @company.branchs.find(params[:id])
+      @branch = @company.branches.find(params[:id])
       if @branch.update(branch_params)
         redirect_to company_path(@company)
       else

@@ -46,14 +46,14 @@ table.company[width="100%"]
         td[colspan="4"]
           = f.submit "登録"
 table.company[width="100%"]
-  = form_for([@company, @exective]) do |f|
+  = form_for([@company, @executive]) do |f|
     tbody
       tr 
         th[colspan="4"]
           | 役員一覧
       tr.ceter
         td
-          = f.file_field :position
+          = f.text_field :position
         td
           = f.text_area :name
       tr
@@ -167,8 +167,6 @@ table.company[width="100%"]
       tr.ceter
         th 年月日
         td  = f.date_field :year
-        th タイトル
-        td  = f.text_field :title
         th 内容
         td  = f.text_area :body
       tr

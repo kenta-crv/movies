@@ -76,13 +76,13 @@
     - if @company.introductions.present?
      li#display_heading_1
       h2 #{@company.co}の概要
-    - if @company.branchs.present?
+    - if @company.branches.present?
      li#display_heading_2
       h2 #{@company.co}の拠点
     - if @company.histories.present?
      li#display_heading_3
       h2 #{@company.co}の沿革
-    - if @company.exectives.present?
+    - if @company.executives.present?
      li#display_heading_4
       h2 #{@company.co}の役員一覧
     - if @company.presidents.present?
@@ -145,6 +145,21 @@
          = link_to "削除", company_history_path(@company, history), method: :delete, data: {confirm:"本当に削除しますか？"}   
   hr.line
 
+  #review-detail
+  .headline-first.center#display_heading_2
+    | #{@company.co}の役員一覧
+  .body-base
+   table.company
+    - @company.executives.each do |executive|
+     tr 
+       th
+         = executive.position
+       td
+         = executive.name
+         = link_to "編集", edit_company_executive_path(@company, executive), _blank: "target"
+         = link_to "削除", company_executive_path(@company, executive), method: :delete, data: {confirm:"本当に削除しますか？"}   
+  hr.line
+
   .headline-first.center#display_heading_2
     | 代表取締役：#{@company.only_president}氏について
   .body-base
@@ -158,21 +173,6 @@
           = president.body
           = link_to "編集", edit_company_president_path(@company, president), _blank: "target"
           = link_to "削除", company_president_path(@company, president), method: :delete, data: {confirm:"本当に削除しますか？"}
-  hr.line
-
-  #review-detail
-  .headline-first.center#display_heading_2
-    | #{@company.co}の役員一覧
-  .body-base
-   table.company
-    - @company.exectives.each do |exective|
-     tr 
-       th
-         = exective.position
-       td
-         = exective.name
-         = link_to "編集", edit_company_exective_path(@company, exective), _blank: "target"
-         = link_to "削除", company_exective_path(@company, exective), method: :delete, data: {confirm:"本当に削除しますか？"}   
   hr.line
 
 #review-detail.center
@@ -286,9 +286,9 @@ hr.line
     - @company.pressreleases.each do |pressrelease|
      tr 
        th
-         = award.year
+         = pressrelease.year
        th
-         = award.url
+         = pressrelease.url
        td
           = pressrelease.body
           = link_to "編集", edit_company_pressrelease_path(@company, pressrelease), _blank: "target"
