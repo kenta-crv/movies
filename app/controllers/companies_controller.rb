@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
     before_action :authenticate_admin!, except: [:index, :show]
       def index
-        @companies = Company.all
+        @companies = Company.page(params[:page]).per(100)
       end
     
       def show
@@ -58,7 +58,7 @@ class CompaniesController < ApplicationController
 
       def import 
         Company.import(params[:file])
-        redirect_to root_url, notice: "インポート完了しました。"
+        redirect_to customers_url, notice:"#{cnt}件登録されました。"
       end
     
       private

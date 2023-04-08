@@ -23,7 +23,9 @@ h1.headline
        br
        /= link_to company.introduction, company_path(company.id), class: "introdution-index"
     hr.line
- 
+.center
+  = paginate(@companies)
+
 h2.headline
     | インポート
 = form_tag import_companies_path, multipart: true do
