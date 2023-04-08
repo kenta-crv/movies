@@ -9,11 +9,15 @@ Rails.application.routes.draw do
     resources :admins, only: [:show]
 
     root to: 'companies#index' #トップページ
+    
 
     resources :columns
     resources :entries
 
     resources :companies do 
+      collection do 
+        post :import
+      end
       resources :introductions #概要
       resources :larges #上場
       resources :branches #支店

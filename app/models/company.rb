@@ -15,4 +15,43 @@ class Company < ApplicationRecord
     has_many :pressreleases #プレスリリース
     has_many :prospects #未来図
     has_many :totals #まとめ
+
+    #company_import
+    def self.import(file)
+      save_cont = 0
+      CSV.foreach(file.path, headers:true) do |row|
+       company = find_by(id: row["id"]) || new
+       company.attributes = row.to_hash.slice(*updatable_attributes)
+       next if self.where(co: company.co).count > 0
+       company.save!
+       save_cont += 1
+      end
+      save_cont
+    end
+
+
+      # 更新を許可するカラムを定義
+    def self.updatable_attributes
+      [
+        "co", #会社名
+        "concept", #コンセプト
+        "rogo", #ロゴ
+        "tel", #電話番号
+        "postnumber", #郵便番号
+        "address", #住所
+        "mail", #メールアドレス
+        "url", #URL
+        "caption", #資本金
+        "people", #従業員数
+        "foundation", #設立日
+        "industry", #業種
+        "business", #事業内容
+        "market", #上場可否
+        "only_president", #代表取締役
+        "settlement", #決算日
+        "sales",
+        "contact"
+      ]    
+    end
+
 end

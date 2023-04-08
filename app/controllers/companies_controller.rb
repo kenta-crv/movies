@@ -55,6 +55,11 @@ class CompaniesController < ApplicationController
           render 'edit'
         end
       end
+
+      def import 
+        Company.import(params[:file])
+        redirect_to root_url, notice: "インポート完了しました。"
+      end
     
       private
       def company_params
@@ -75,7 +80,8 @@ class CompaniesController < ApplicationController
           :market, #上場可否
           :only_president, #代表取締役
           :settlement, #決算日
-          :sales
+          :sales,
+          :contact
           )
       end
     end

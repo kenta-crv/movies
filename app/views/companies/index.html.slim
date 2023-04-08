@@ -24,3 +24,16 @@ h1.headline
        /= link_to company.introduction, company_path(company.id), class: "introdution-index"
     hr.line
  
+h2.headline
+    | インポート
+= form_tag import_companies_path, multipart: true do
+  table.company[width="90%"]
+    tbody
+      tr
+        th[colspan="2"]
+          | CUSTOMER_CSVファイルインポート
+      tr
+        td
+          = file_field_tag :file
+        th
+          = submit_tag "インポート",  class: 'btn btn-primary'
