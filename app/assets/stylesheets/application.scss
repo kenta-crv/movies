@@ -902,7 +902,11 @@ ul {
 .companies-index {
   padding-left:30px;
   .image-index {
-    height:"150px";
+    padding-left:30px;
+    padding-bottom:30px;
+  }
+  .introduction {
+    padding-top:30px;
   }
   .company{
     text-decoration: none;

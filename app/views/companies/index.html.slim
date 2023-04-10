@@ -7,9 +7,13 @@ h1.headline
    .row
     .col-sm-3
       = link_to company_path(company.id)do 
-       = image_tag company.rogo.to_s, class:"image-index"
+       .image-index
+        = image_tag company.rogo.to_s, width:"150px"
     .col-sm-8  
        = link_to company.co, company_path(company.id), class:"company"
+       - company.introductions.each do |introduction|
+        .introduction
+         = introduction.body
        - if admin_signed_in?
                | （
                = link_to '編集  ', edit_company_path(company.id),class:"edit"

@@ -58,7 +58,7 @@ class CompaniesController < ApplicationController
 
       def import 
         Company.import(params[:file])
-        redirect_to customers_url, notice:"#{cnt}件登録されました。"
+        redirect_to companies_url, notice:"#{cnt}件登録されました。"
       end
     
       private
