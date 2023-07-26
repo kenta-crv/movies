@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_08_102856) do
+ActiveRecord::Schema.define(version: 2023_07_25_120620) do
 
   create_table "achivements", force: :cascade do |t|
     t.integer "company_id"
@@ -184,6 +184,24 @@ ActiveRecord::Schema.define(version: 2023_04_08_102856) do
     t.string "desired_employment"
     t.string "desired_work_location"
     t.string "desired_period"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estimates", force: :cascade do |t|
+    t.string "co"
+    t.string "name"
+    t.string "tel"
+    t.string "email"
+    t.string "address"
+    t.string "url"
+    t.string "contents"
+    t.string "budget"
+    t.string "important"
+    t.string "language"
+    t.string "order"
+    t.string "period"
+    t.string "remarks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

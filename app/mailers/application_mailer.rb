@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "driver@factoru.jp"
+  default from: "info@engist.jp"
   layout 'mailer'
 end

@@ -8,7 +8,21 @@ Rails.application.routes.draw do
 
     resources :admins, only: [:show]
 
-    root to: 'companies#index' #トップページ
+    root to: 'tops#index' #トップページ
+
+    resources :estimates do
+      resource :comments
+      collection do
+        post :confirm
+        post :thanks
+      end
+      member do
+        get :apply
+        post :send_mail
+        get :confirm_point
+        post :apply
+      end
+    end
     
 
     resources :columns
