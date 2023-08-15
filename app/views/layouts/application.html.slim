@@ -23,7 +23,12 @@ html
   br
 
   body
-   .row
-    .col-sm-12
-     = yield
-   br
+    p.notice
+       = notice
+    p.alert
+       = alert
+
+    .row
+     .col-sm-12
+      = yield
+    br

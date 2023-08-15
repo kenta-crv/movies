@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :companies do 
       collection do 
         post :import
+        post :update_import
       end
       resources :introductions #概要
       resources :larges #上場

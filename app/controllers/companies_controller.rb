@@ -1,8 +1,16 @@
 class CompaniesController < ApplicationController
     before_action :authenticate_admin!, except: [:index, :show]
-      def index
-        @companies = Company.page(params[:page]).per(100)
+    def index
+      @q = Company.ransack(params[:q])
+      @companies_for_view = @q.result.page(params[:page]).per(100).order(created_at: :desc)
+      respond_to do |format|
+        format.html
+        format.csv do
+          @all_companies = @q.result.order(created_at: :desc)
+          send_data @all_companies.generate_csv, filename: "companies-#{Time.zone.now.strftime('%Y%m%d%S')}.csv"
+        end
       end
+    end
     
       def show
         @company = Company.find(params[:id])
@@ -56,8 +64,13 @@ class CompaniesController < ApplicationController
         end
       end
 
-      def import 
-        Company.import(params[:file])
+      def import
+        cnt = Company.import(params[:file])
+        redirect_to companies_url, notice:"#{cnt}件登録されました。"
+      end
+    
+      def update_import
+        cnt = Company.update_import(params[:update_file])
         redirect_to companies_url, notice:"#{cnt}件登録されました。"
       end
     

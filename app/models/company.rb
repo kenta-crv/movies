@@ -29,6 +29,61 @@ class Company < ApplicationRecord
       save_cont
     end
 
+    def self.import(file)
+      save_count = 0
+      CSV.foreach(file.path, headers:true) do |row|
+        # coが重複している場合はスキップ
+        next if exists?(co: row["co"])
+        company = find_by(id: row["id"]) || new
+        company.attributes = row.to_hash.slice(*updatable_attributes)
+        company.save!
+        save_count += 1
+      end
+      save_count
+    end
+
+    #update_import
+    def self.update_import(update_file)
+      save_cnt = 0
+      CSV.foreach(update_file.path, headers: true) do |row|
+        company = find_by(id: row["id"]) || new
+        company.attributes = row.to_hash.slice(*updatable_attributes)
+        next if company.co == nil
+        company.save!
+        save_cnt += 1
+      end
+      save_cnt
+    end
+
+    #company_export
+  def self.generate_csv
+    CSV.generate(headers:true) do |csv|
+      csv << csv_attributes
+      all.each do |task|
+        csv << csv_attributes.map{|attr| task.send(attr)}
+      end
+    end
+  end
+  def self.csv_attributes
+    [
+    "co", #会社名
+    "concept", #コンセプト
+    "rogo", #ロゴ
+    "tel", #電話番号
+    "postnumber", #郵便番号
+    "address", #住所
+    "mail", #メールアドレス
+    "url", #URL
+    "caption", #資本金
+    "people", #従業員数
+    "foundation", #設立日
+    "industry", #業種
+    "business", #事業内容
+    "settlement", #決算日
+    "sales",
+    "contact"
+  ]
+  end
 
       # 更新を許可するカラムを定義
     def self.updatable_attributes
@@ -46,8 +101,6 @@ class Company < ApplicationRecord
         "foundation", #設立日
         "industry", #業種
         "business", #事業内容
-        "market", #上場可否
-        "only_president", #代表取締役
         "settlement", #決算日
         "sales",
         "contact"

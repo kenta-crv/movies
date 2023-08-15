@@ -254,7 +254,7 @@
        @media screen and ( max-width:479px ){font-size:2.0rem;}
       }
    .headline-first:first-letter {
-       color:var(--main-color);
+       color:$main_color;
        font-size:4.0rem;
        @media screen and (max-width:479px ){fint-size:1.8rem;}
        }
@@ -273,7 +273,7 @@
        @media screen and ( max-width:479px ){font-size:2.0rem;}
       }
    h2.before {
-       color:var(--main-color);
+       color:$main_color;
        font-size:3.5rem;
        @media screen and (max-width:479px ){fint-size:1.8rem;}
        }
@@ -295,8 +295,8 @@
         display: inline-block;
         width: 45px;
         height: 2px;
-        border-top: solid 2px var(--main-color);
-        border-bottom: solid 2px var(--main-color);
+        border-top: solid 2px $main_color;
+        border-bottom: solid 2px $main_color;
         }
     h3:before {
        left:0;
@@ -322,8 +322,8 @@
         display: inline-block;
         width: 45px;
         height: 2px;
-        border-top: solid 2px var(--main-color);
-        border-bottom: solid 2px var(--main-color);
+        border-top: solid 2px $main_color;
+        border-bottom: solid 2px $main_color;
         }
     h4:before {
        left:0;
@@ -333,9 +333,9 @@
         }
     
     h5 {
-       color: var(--main-color);
+       color: $main_color;
        margin-left:60px;
-       border: dotted var(--main-color) 2px;/*ドット 色 太さ*/
+       border: dotted $main_color 2px;/*ドット 色 太さ*/
        padding: 0.5em 0.5em 0.5em 2em;
        line-height: 1.5;
        width:60%;
@@ -379,7 +379,7 @@
   font-weight: bold;
   top: 0;
   left: 0;
-  background-color:var(--main-color);
+  background-color:$main_color;
   padding:2px 10px;
   @media screen and ( max-width:479px ){
         margin-top: 15px;
@@ -623,7 +623,7 @@ table.company {
   font-size: 1.3vw;
   th, td { padding: 10px; }
   th {
-     background: var(--main-color);
+     background: $main_color;
      vertical-align: middle;
      text-align: left;
      overflow: visible;
@@ -640,7 +640,7 @@ table.company {
         position: absolute;
         pointer-events: none;
         border-color: rgba(136, 183, 213, 0);
-        border-left-color: var(--main-color);
+        border-left-color: $main_color;
         border-width: 10px;
         margin-top: -10px;
         }
@@ -667,7 +667,7 @@ table.company {
  }
 
  .company-cell{
-  background-color:var(--main-color);
+  background-color:$main_color;
   display: inline-block;
   font-size:21px;
   width:100%;
@@ -1604,7 +1604,7 @@ table.company {
        @media screen and ( max-width:479px ){font-size:2.0rem;}
       }
    .headline-first:first-letter {
-       color:var(--main-color);
+       color:$main_color;
        font-size:4.0rem;
        @media screen and (max-width:479px ){fint-size:1.8rem;}
        }
@@ -1623,7 +1623,7 @@ table.company {
        @media screen and ( max-width:479px ){font-size:2.0rem;}
       }
    h2.before {
-       color:var(--main-color);
+       color:$main_color;
        font-size:3.5rem;
        @media screen and (max-width:479px ){fint-size:1.8rem;}
        }
@@ -1645,8 +1645,8 @@ table.company {
         display: inline-block;
         width: 45px;
         height: 2px;
-        border-top: solid 2px var(--main-color);
-        border-bottom: solid 2px var(--main-color);
+        border-top: solid 2px $main_color;
+        border-bottom: solid 2px $main_color;
         }
     h3:before {
        left:0;
@@ -1672,8 +1672,8 @@ table.company {
         display: inline-block;
         width: 45px;
         height: 2px;
-        border-top: solid 2px var(--main-color);
-        border-bottom: solid 2px var(--main-color);
+        border-top: solid 2px $main_color;
+        border-bottom: solid 2px $main_color;
         }
     h4:before {
        left:0;
@@ -1683,9 +1683,9 @@ table.company {
         }
     
     h5 {
-       color: var(--main-color);
+       color: $main_color;
        margin-left:60px;
-       border: dotted var(--main-color) 2px;/*ドット 色 太さ*/
+       border: dotted $main_color 2px;/*ドット 色 太さ*/
        padding: 0.5em 0.5em 0.5em 2em;
        line-height: 1.5;
        width:60%;
@@ -1712,7 +1712,7 @@ table.company {
   font-weight: bold;
   top: 0;
   left: 0;
-  background-color:var(--main-color);
+  background-color:$main_color;
   padding:2px 10px;
   @media screen and ( max-width:479px ){
         margin-top: 15px;
@@ -1737,12 +1737,12 @@ table.company {
    }
      .maker {
     font-size:21px;
-    color:var(--main-color);
+    color:$main_color;
     font-weight:bold;
   }
   .link {
     font-size:18px;
-    color:var(--main-color);
+    color:$main_color;
   }
 }
 
