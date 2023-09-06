@@ -92,6 +92,7 @@ class EstimatesController < ApplicationController
         :name,  #名前
         :tel, #電話番号
         :email, #メールアドレス
+        :address,
         :url, #会社HP
         :contents, #発注内容
         :budget, #予算
