@@ -1,17 +1,14 @@
-『ENGIST』にお問い合わせがありました。
+『セールスプロ』にお問い合わせがありました。
 
 --------------------------
 会社名: <%= @estimate.co%>
-担当者名: <%= @estimate.name%>
+担当者名: <%= @estimate.name%>（<%= @estimate.name_kana%>）
 電話番号: <%= @estimate.tel%>
 住所: <%= @estimate.address%>
 メールアドレス: <%= @estimate.email%>
-URL: <%= @estimate.url%>
-発注内容: <%= @estimate.contents %>
-予算: <%= @estimate.budget %>
-重視する点:<%= @estimate.important %>
-希望言語: <%= @estimate.language %>
-発注予定時期: <%= @estimate.order %>
-納品希望期限:<%= @estimate.period %>
-開発について依頼:<%= @estimate.remarks %>
+求人ページURL: <%= @estimate.url%>
+募集人数: <%= @estimate.contents%>人
+重視する点: <%= @estimate.important %>
+依頼予定時期: <%= @estimate.order %>
+備考:<%= @estimate.remarks %>
 --------------------------

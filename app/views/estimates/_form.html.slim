@@ -53,7 +53,7 @@ table.company.responsive-table
         td.label-cell
           strong.label.label-blue 任意
         td.arrow-box-cell
-          | URL
+          | 求人ページURL
         td.responsive-cell
          .input-container
           = f.text_field :url
@@ -61,26 +61,11 @@ table.company.responsive-table
         td.label-cell
           strong.label 必須
         td.arrow-box-cell
-          | 発注内容
+          | 募集人数
         td.responsive-cell
          .input-container
           = f.text_field :contents
-      tr
-        td.label-cell
-          strong.label 必須
-        td.arrow-box-cell
-          | 予算
-        td.responsive-cell
-         .input-container
-          = f.select(:budget,[\
-            ["~50万円","~50万円"],\
-            ["51万円〜100万円","51万円〜100万円"],\
-            ["101万円〜200万円","101万円〜200万円"],\
-            ["201万円〜400万円","201万円〜400万円"],\
-            ["401万円〜600万円","401万円〜600万円"],\
-            ["601万円〜","601万円〜"],\
-            ["相談して決めたい","相談して決めたい"],\
-           ],include_blank: "選択してください")
+          | 人
       tr
         td.label-cell
           strong.label 必須
@@ -89,25 +74,17 @@ table.company.responsive-table
         td.responsive-cell
          .input-container
           = f.select(:important,[\
-            ["クオリティ","クオリティ"],\
-            ["納品スピード","納品スピード"],\
-            ["フォロー力","フォロー力"],\
+            ["即戦力","即戦力"],\
+            ["スピード採用","スピード採用"],\
+            ["人材の質と金額のバランス","人材の質と金額のバランス"],\
             ["価格の安さ","価格の安さ"],\
-            ["企業の信頼性・実績","企業の信頼性・実績"],\
+            ["その他","その他"],\
            ],include_blank: "選択してください")
-      tr
-        td.label-cell
-          strong.label.label-blue 任意
-        td.arrow-box-cell
-          | 希望言語
-        td.responsive-cell
-         .input-container
-          = f.text_field :language
       tr
         td.label-cell
           strong.label 必須
         td.arrow-box-cell
-          | 発注予定時期
+          | 依頼予定時期
         td.responsive-cell
          .input-container
           = f.select(:order,[\
@@ -118,23 +95,9 @@ table.company.responsive-table
            ],include_blank: "選択してください")
       tr
         td.label-cell
-          strong.label 必須
+          strong.label.label-blue 必須
         td.arrow-box-cell
-          | 納品希望期限
-        td.responsive-cell
-         .input-container
-          = f.select(:period,[\
-            ["できるだけ早く","できるだけ早く"],\
-            ["1ヶ月以内","1ヶ月以内"],\
-            ["3ヶ月以内","3ヶ月以内"],\
-            ["6ヶ月以内","6ヶ月以内"],\
-            ["スピードは重視しない","スピードは重視しない"],\
-           ],include_blank: "選択してください")
-      tr
-        td.label-cell
-          strong.label 必須
-        td.arrow-box-cell
-          | 開発について依頼
+          | 備考
         td.responsive-cell
          .input-container
           = f.text_area :remarks

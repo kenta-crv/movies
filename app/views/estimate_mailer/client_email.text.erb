@@ -1,8 +1,8 @@
-<%= @company.company%> <%= @company.name%>様
+<%= @estimate.company%> <%= @estimate.name%>様
 
 お世話になっております。
 
-株式会社Ri-Plusでございます。
+株式会社セールスプロでございます。
 
 以下においてお見積もり依頼案件がございました。
 
@@ -16,10 +16,10 @@
 電話番号: <%= @estimate.tel%>
 住所: <%= @estimate.address%>
 メールアドレス: <%= @estimate.email%>
-URL: <%= @estimate.url%>
-決算期（法人の場合）: <%= @estimate.settlement%>
-買取希望額: <%= @estimate.price %>
-使用用途: <%= @estimate.use %>
+求人ページURL: <%= @estimate.url%>
+募集人数: <%= @estimate.contents%>人
+重視する点: <%= @estimate.important %>
+依頼予定時期: <%= @estimate.order %>
 備考:<%= @estimate.remarks %>
 --------------------------
 

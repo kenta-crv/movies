@@ -1,9 +1,9 @@
 class EstimateMailer < ActionMailer::Base
-  default from: "info@engist.jp"
+  default from: "info@sale-s.pro"
   def received_email(estimate)
     @estimate = estimate
-    mail to: "info@engist.jp"
-    mail(subject: 'ENGISTにお問い合わせ頂きありがとうございます。') do |format|
+    mail to: "info@sale-s.pro"
+    mail(subject: 'セールスプロにお問い合わせ頂きありがとうございます。') do |format|
       format.text
     end
   end
@@ -11,7 +11,7 @@ class EstimateMailer < ActionMailer::Base
   def send_email(estimate)
     @estimate = estimate
     mail to: estimate.email
-    mail(subject: 'ENGISTにお問い合わせ頂きありがとうございます。') do |format|
+    mail(subject: 'セールスプロにお問い合わせ頂きありがとうございます。') do |format|
       format.text
     end
   end
@@ -19,7 +19,7 @@ class EstimateMailer < ActionMailer::Base
   def client_email(estimate)
     @estimate = estimate
     mail bcc: Company.all.map{|company| company.mail}
-    mail(subject: 'ENGIST') do |format|
+    mail(subject: 'セールスプロ') do |format|
       format.text
     end
   end
