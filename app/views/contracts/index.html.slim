@@ -1,0 +1,22 @@
+- set_meta_tags  title: ''
+- set_meta_tags  description: ''
+
+- set_meta_tags noindex: true
+
+.row
+  br
+  br
+  table.company
+   tr
+     th 会社名
+     th 担当者
+   - @contracts.each do |contract|
+    tr
+     td = link_to contract.co, contract_path(contract), clsss:"store"
+     td = contract.president_first
+        = contract.president_last
+
+  br
+    hr.line
+    br
+    = paginate(@contracts)

@@ -1,0 +1,174 @@
+- set_meta_tags  title: ''
+- set_meta_tags  description: ''
+
+=  form_for @contract, url: thanks_contracts_path(@contract) do |f|
+  br
+  br
+  .tops-wrapper
+    h2.headline
+      | お見積もり確認フォーム
+  table.company.responsive-table
+      colgroup
+        col.col-1
+        col.col-2
+        col.col-3
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社名
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :co
+          = @contract.co
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 担当者名
+        td.responsive-cell
+         .input-container
+         = f.hidden_field :president_first
+         = f.hidden_field :president_last
+         = @contract.president_first
+         = @contract.president_last
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社電話番号
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :tel
+          = @contract.tel
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 住所
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :address
+          = @contract.address
+      tr
+        td.label-cell
+          strong.label あれば必須
+        td.arrow-box-cell
+          | 会社URL
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :url
+          = @contract.url
+      tr
+        td.label-cell
+          strong.label.label-blue あれば必須
+        td.arrow-box-cell
+          | 求人ページURL
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :recruit_url
+          = @contract.recruit_url
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 採用予定職種
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :work
+          = @contract.work
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ご利用プラン選択
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :plan
+          = @contract.plan
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 募集人数
+          br
+          |
+        td.responsive-cell
+         .input-container
+         = f.hidden_field :number
+         = @contract.number
+         | 人
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 希望採用予定
+        td.responsive-cell
+         .input-container
+         = f.hidden_field :period
+         = @contract.period
+      tr
+        td.label-cell
+          strong.label.label-blue 任意
+        td.arrow-box-cell
+          | 備考
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :remarks
+          = @contract.remarks
+  .tops-wrapper
+   h2.headline  担当者情報
+  table.company.responsive-table
+      colgroup
+        col.col-1
+        col.col-2
+        col.col-3
+      tr
+        td.label-cell
+          strong.label.label-blue 同上なら未記入
+        td.arrow-box-cell
+          | 担当者名
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :person_first
+          = f.hidden_field :person_last
+          = @contract.person_first
+          = @contract.person_last
+      tr
+        td.label-cell
+          strong.label.label-blue 同上なら未記入
+        td.arrow-box-cell
+          | 電話番号
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :person_tel
+          = @contract.person_tel
+      tr
+        td.label-cell
+          strong.label.label-blue 同上なら未記入
+        td.arrow-box-cell
+          | メールアドレス
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :remarks
+          = @contract.remarks
+  .tops-wrapper
+   h2.headline  約款同意
+  table.company.responsive-table
+      colgroup
+        col.col-1
+        col.col-2
+        col.col-3
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 約款に同意しますか？
+        td.responsive-cell
+          .input-container
+           = f.hidden_field :agree
+          = @contract.agree
+      tr
+       td colspan="3"
+        .center
+         = f.submit "送信", class:"btn btn-primary", data: {behavior: "fb-track"}

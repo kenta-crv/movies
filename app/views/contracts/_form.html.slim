@@ -1,0 +1,161 @@
+ - if @contract.errors.any? 
+  strong 入力内容にエラーがあります
+  ul
+    - @contract.errors.each do |attr, msg|
+      li= msg
+    br
+
+ table.company.responsive-table
+      colgroup
+        col.col-1
+        col.col-2
+        col.col-3
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社名
+        td.responsive-cell
+         .input-container
+          = f.text_field :co
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 代表者名
+        td.responsive-cell
+         .input-container
+           = f.text_field :president_first, class:"harf"
+           = f.text_field :president_last, class:"harf"
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社電話番号
+        td.responsive-cell
+         .input-container
+          = f.phone_field :tel
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 住所
+        td.responsive-cell
+         .input-container
+          = f.text_field :address
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社URL
+        td.responsive-cell
+         .input-container
+          = f.url_field :url
+      tr
+        td.label-cell
+          strong.label.label-blue あれば必須
+        td.arrow-box-cell
+          | 求人ページURL
+        td.responsive-cell
+         .input-container
+          = f.url_field :recruit_url
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 採用予定職種
+        td.responsive-cell
+         .input-container
+          = f.text_field :work
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ご利用プラン選択
+        td.responsive-cell
+         .input-container
+          = f.select(:plan,[\
+            ["お手頃プラン","お手頃プラン"],
+            ["スタンダードプラン","スタンダードプラン"],
+            ["エンタープライズプラン","エンタープライズプラン"],
+          ], include_blank:"選択してください")
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 募集人数
+        td.responsive-cell
+         .input-container
+          = f.number_field :number
+          | 人
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 希望採用予定
+        td.responsive-cell
+         .input-container
+          = f.select(:period,[\
+            ["すぐにでも","すぐにでも"],\
+            ["1ヶ月以内","1ヶ月以内"],\
+            ["2ヶ月以内","2ヶ月以内"],\
+           ],include_blank: "選択してください")
+      tr
+        td.label-cell
+          strong.label.label-blue 任意
+        td.arrow-box-cell
+          | 備考
+        td.responsive-cell
+         .input-container
+          = f.text_area :remarks
+
+ .tops-wrapper
+  h2.headline  担当者情報
+ table.company.responsive-table
+      colgroup
+        col.col-1
+        col.col-2
+        col.col-3
+      tr
+        td.label-cell
+          strong.label.label-blue 同上なら未記入
+        td.arrow-box-cell
+          | 担当者名
+        td.responsive-cell
+         .input-container
+          = f.text_field :person_first, class:"harf"
+          = f.text_field :person_last, class:"harf"
+      tr
+        td.label-cell
+          strong.label.label-blue 同上なら未記入
+        td.arrow-box-cell
+          | 電話番号
+        td.responsive-cell
+         .input-container
+          = f.phone_field :person_tel
+      tr
+        td.label-cell
+          strong.label.label-blue 同上なら未記入
+        td.arrow-box-cell
+          | メールアドレス
+        td.responsive-cell
+         .input-container
+          = f.email_field :email
+ .tops-wrapper
+  h2.headline  約款同意
+ table.company.responsive-table
+      colgroup
+        col.col-1
+        col.col-2
+        col.col-3
+      tr
+        td.label-cell
+          strong.label 必須
+        td.responsive-cell
+         .input-container
+          = f.check_box :agree
+        td.arrow-box-cell
+          | 約款に同意しますか？
+      tr
+        td colspan="3"
+          = f.submit "確認画面", class:"btn btn-primary"

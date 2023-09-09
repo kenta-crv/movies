@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_25_120620) do
-
-  create_table "achivements", force: :cascade do |t|
-    t.integer "company_id"
-    t.date "year"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_achivements_on_company_id"
-  end
+ActiveRecord::Schema.define(version: 2023_09_09_102150) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,34 +22,6 @@ ActiveRecord::Schema.define(version: 2023_07_25_120620) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-  end
-
-  create_table "awards", force: :cascade do |t|
-    t.integer "company_id"
-    t.date "year"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_awards_on_company_id"
-  end
-
-  create_table "branches", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "name"
-    t.string "tel"
-    t.string "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_branches_on_company_id"
-  end
-
-  create_table "businesses", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_businesses_on_company_id"
   end
 
   create_table "columns", force: :cascade do |t|
@@ -129,61 +92,24 @@ ActiveRecord::Schema.define(version: 2023_07_25_120620) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "companies", force: :cascade do |t|
+  create_table "contracts", force: :cascade do |t|
+    t.string "agree"
     t.string "co"
-    t.string "rogo"
+    t.string "president_first"
+    t.string "president_last"
     t.string "tel"
-    t.string "mail"
-    t.string "postnumber"
     t.string "address"
     t.string "url"
-    t.date "foundation"
-    t.string "caption"
-    t.string "people"
-    t.string "industry"
-    t.string "business"
-    t.string "concept"
-    t.string "only_president"
-    t.string "settlement"
-    t.string "sales"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "contact"
-  end
-
-  create_table "cultures", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_cultures_on_company_id"
-  end
-
-  create_table "deaths", force: :cascade do |t|
-    t.integer "company_id"
-    t.date "year"
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_deaths_on_company_id"
-  end
-
-  create_table "entries", force: :cascade do |t|
-    t.string "occupation"
-    t.string "name"
-    t.string "tel"
+    t.string "recruit_url"
+    t.string "work"
+    t.string "plan"
+    t.string "number"
+    t.string "period"
+    t.string "remarks"
+    t.string "person_first"
+    t.string "person_last"
+    t.string "person_tel"
     t.string "email"
-    t.string "age"
-    t.string "experience"
-    t.string "number_of_years"
-    t.string "work_content"
-    t.string "acquired_language"
-    t.string "annual_income"
-    t.string "desired_salary"
-    t.string "desired_employment"
-    t.string "desired_work_location"
-    t.string "desired_period"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -204,90 +130,6 @@ ActiveRecord::Schema.define(version: 2023_07_25_120620) do
     t.string "remarks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "executives", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "position"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_executives_on_company_id"
-  end
-
-  create_table "histories", force: :cascade do |t|
-    t.integer "company_id"
-    t.date "year"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_histories_on_company_id"
-  end
-
-  create_table "introductions", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_introductions_on_company_id"
-  end
-
-  create_table "presidents", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "face"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_presidents_on_company_id"
-  end
-
-  create_table "pressreleases", force: :cascade do |t|
-    t.integer "company_id"
-    t.date "year"
-    t.string "url"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_pressreleases_on_company_id"
-  end
-
-  create_table "prospects", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_prospects_on_company_id"
-  end
-
-  create_table "recruits", force: :cascade do |t|
-    t.integer "company_id"
-    t.date "year"
-    t.string "salary"
-    t.string "occupation"
-    t.string "employment_status"
-    t.string "body"
-    t.string "sales_point"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_recruits_on_company_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer "company_id"
-    t.date "year"
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_reviews_on_company_id"
-  end
-
-  create_table "totals", force: :cascade do |t|
-    t.integer "company_id"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_totals_on_company_id"
   end
 
 end

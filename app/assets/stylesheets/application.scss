@@ -1199,7 +1199,7 @@ table.company {
  }
 
  .harf {
-   width:50%;
+   width:45%;
  }
 
 
@@ -1846,4 +1846,22 @@ table.free {
 .box13 p {
     margin: 0; 
     padding: 0;
+}
+
+
+.infobox {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  height: 18em;
+  /* 高さを制限(※) */
+  width: 90%;
+  overflow: scroll;
+  /* スクロールバーを表示(※) */
+  border: #000 3px border;
+  /* 枠線を追加 */
+  background-color: #fff;
+  /* 背景色を追加 */
+
+  p {font-size: 1.5vw;}
 }
