@@ -1,9 +1,9 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: "システム開発なら一括見積のENGIST",
-      title:"<%= yield(:title) | ENGIST' %>",
-      description: "システム開発なら一括見積のENGIST",
+      site: "営業・販売に特化した人材紹介なら『セールスプロ』",
+      title:"<%= yield(:title) | セールスプロ' %>",
+      description: "営業・販売に特化した人材紹介なら『セールスプロ』",
       canonical: request.original_url,  # 優先されるurl
       charset: "UTF-8",
       reverse: true,
