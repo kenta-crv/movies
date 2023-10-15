@@ -68,6 +68,8 @@
          .input-container
           = f.hidden_field :recruit_url
           = @contract.recruit_url
+          = f.hidden_field :recruit_url_2
+          = @contract.recruit_url_2
       tr
         td.label-cell
           strong.label 必須
@@ -138,7 +140,7 @@
         td.label-cell
           strong.label.label-blue 同上なら未記入
         td.arrow-box-cell
-          | 電話番号
+          | 担当者電話番号
         td.responsive-cell
          .input-container
           = f.hidden_field :person_tel
@@ -147,11 +149,11 @@
         td.label-cell
           strong.label.label-blue 同上なら未記入
         td.arrow-box-cell
-          | メールアドレス
+          | 担当者メールアドレス
         td.responsive-cell
          .input-container
-          = f.hidden_field :remarks
-          = @contract.remarks
+          = f.hidden_field :email
+          = @contract.email
   .tops-wrapper
    h2.headline  約款同意
   table.company.responsive-table

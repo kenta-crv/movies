@@ -28,7 +28,7 @@ class ContractsController < ApplicationController
   
     def show
       @contract = Contract.find_by(params[:id])
-
+      send_file @contract.pdf.path, type: 'application/pdf', disposition: 'inline'
     end
   
     def edit
@@ -59,8 +59,10 @@ class ContractsController < ApplicationController
         :president_last,  #代表者名
         :tel, #電話番号
         :address, #ご住所住所
+        :email, #メールアドレス
         :url, #会社HP
         :recruit_url, #採用ページ
+        :recruit_url_2, #採用ページ
         :work, #採用予定職種
         :plan, #ご利用プラン選択
         :number, #採用予定人数
@@ -69,7 +71,6 @@ class ContractsController < ApplicationController
         :person_first,  #採用担当姓
         :person_last,  #採用担当名
         :person_tel, #採用担当携帯番号
-        :email #採用担当メールアドレス
       )
     end
 end

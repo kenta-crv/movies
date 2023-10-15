@@ -54,6 +54,14 @@
           = @contract.recruit_url
       tr
         td.label-cell
+          strong.label.label-blue あれば必須
+        td.arrow-box-cell
+          | 添付PDF
+        td.responsive-cell
+         .input-container
+          = @contract.pdf
+      tr
+        td.label-cell
           strong.label 必須
         td.arrow-box-cell
           | 採用予定職種
