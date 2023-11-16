@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_14_113844) do
+ActiveRecord::Schema.define(version: 2023_11_16_090016) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 2023_10_14_113844) do
     t.string "person_email"
     t.string "recruit_url_2"
     t.string "pdf"
+    t.string "memo"
   end
 
   create_table "estimates", force: :cascade do |t|
@@ -136,6 +137,16 @@ ActiveRecord::Schema.define(version: 2023_10_14_113844) do
     t.string "remarks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "progresses", force: :cascade do |t|
+    t.integer "contract_id"
+    t.string "status"
+    t.datetime "next"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contract_id"], name: "index_progresses_on_contract_id"
   end
 
 end

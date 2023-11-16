@@ -94,4 +94,3 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 
 gem 'pry-rails'
-gem 'rmagick'

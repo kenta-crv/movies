@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
     
     resources :contracts do
+      resources :progresses
       collection do
         post :confirm
         post :thanks
