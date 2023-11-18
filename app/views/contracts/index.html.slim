@@ -10,11 +10,21 @@
    tr
      th 会社名
      th 担当者
+     th 電話番号
+     th メールアドレス
+     th 編集/削除
    - @contracts.each do |contract|
     tr
      td = link_to contract.co, contract_path(contract), clsss:"store"
-     td = contract.president_first
-        = contract.president_last
+     td = contract.person_first
+        = contract.person_last
+     td = contract.person_tel
+     td = contract.email
+     td
+      - if admin_signed_in?
+       = link_to "編集", edit_contract_path(contract) , class:"btn btn-primary"
+       = link_to "削除", contract_path(contract) ,method: :delete,  data: { confirm: '本当に削除しますか？'}, class:"btn btn-danger"
+      br
 
   br
     hr.line
