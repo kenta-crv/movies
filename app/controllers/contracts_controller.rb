@@ -27,8 +27,7 @@ class ContractsController < ApplicationController
     end
   
     def show
-      @contract = Contract.find_by(params[:id])
-      #send_file @contract.pdf.path, type: 'application/pdf', disposition: 'inline'
+      @contract = Contract.find(params[:id])
       @progress = Progress.new
     end
   

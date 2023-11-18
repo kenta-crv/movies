@@ -1,5 +1,5 @@
 .tops-wrapper
   h2.headline
      | 顧客情報編集
-=  form_for @contract, html: { multipart: true }, url: confirm_contracts_path(@contract) do |f|
+=  form_for @contract, html: { multipart: true } do |f|
     = render 'form', f: f, btn_name: "確認画面"
