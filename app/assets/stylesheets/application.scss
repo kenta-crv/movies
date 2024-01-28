@@ -17,9 +17,9 @@
 
  @import "bootstrap";
 
- $main_color: #002452;
- $sub_color: #0365C0;
- $asort_color: #002452;
+ $main_color: #3287EE;
+ $sub_color: #37B900;
+ $asort_color: #3287EE;
 
  body {
    width:100%;
@@ -186,7 +186,7 @@
   .back-image-index {
     text-align:center;
     .index-3 {
-        font-size:3.4vw;
+        font-size:3.8vw;
         font-weight:bold;
         line-height:7vw;
         color:$asort_color;
@@ -199,7 +199,7 @@
         
     }
     .red-title {
-        font-size:4.0vw;
+        font-size:4.8vw;
         font-weight:bold;
         line-height:7vw;
         color:red;
