@@ -1,9 +1,9 @@
 class ContractMailer < ActionMailer::Base
-  default from: "info@sale-s.pro"
+  default from: "info@c-are.link"
   def received_email(contract)
     @contract = contract
-    mail to: "info@sale-s.pro"
-    mail(subject: 'セールスプロ約款へ同意いただきありがとうございました。') do |format|
+    mail to: "info@c-are.link"
+    mail(subject: '【ケアリンク】約款へ同意いただきありがとうございました。') do |format|
       format.text
     end
   end
@@ -11,7 +11,7 @@ class ContractMailer < ActionMailer::Base
   def send_email(contract)
     @contract = contract
     mail to: contract.email
-    mail(subject: 'セールスプロ約款へ同意いただきありがとうございました。') do |format|
+    mail(subject: '【ケアリンク】約款へ同意いただきありがとうございました。') do |format|
       format.text
     end
   end
@@ -19,7 +19,7 @@ class ContractMailer < ActionMailer::Base
   def client_email(contract)
     @contract = contract
     mail bcc: Company.all.map{|company| company.mail}
-    mail(subject: 'セールスプロ') do |format|
+    mail(subject: '【ケアリンク】') do |format|
       format.text
     end
   end

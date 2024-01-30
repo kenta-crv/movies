@@ -1,0 +1,28 @@
+- set_meta_tags  title: ''
+- set_meta_tags  description: ''
+.row
+  br
+  br
+  table.company
+   tr
+     th id
+     th 都道府県
+     th 登録日
+     th 編集｜削除
+   - @jobs.each do |job|
+    tr
+     td = link_to job.id, job_path(job), clsss:"store"
+     td = job.prefecture
+     td = job.created_at
+     td 
+      
+               = link_to '編集  ', edit_job_path(job.id)
+               = link_to '削除',
+                job_path(job),
+                method: :delete,
+                data: { confirm: '本当に削除しますか？'}
+  br
+    hr.line
+    br
+    = paginate(@jobs)
+

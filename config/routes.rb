@@ -25,8 +25,10 @@ Rails.application.routes.draw do
     end
 
     resources :columns
+    resources :jobs
     
     get 'lp' => 'tops#lp'
+    get 'thanks' => 'tops#thanks'
 
     #get '*path', controller: 'application', action: 'render_404'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

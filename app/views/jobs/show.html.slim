@@ -1,0 +1,98 @@
+.tops-wrapper
+br
+h2.headline  セアリンクサービス説明
+.center
+          iframe width="560" height="315" src="https://www.youtube.com/embed/aM9Tf8gRALc?si=32yCOF1GI4vyAt67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+.tops-wrapper
+br
+h2.headline  基本情報
+.row 
+ .col-sm-1  
+ .col-sm-3
+  br/
+  -if @job.gender == "男" 
+   = image_tag "man.webp", width:"200px";
+  -elsif @job.gender == "女" 
+   = image_tag "woman.webp", width:"200px";
+  -else
+ .col-sm-8
+  table.company
+     tbody
+      tr
+        th.arrow_box 都道府県
+        td 
+          = @job.prefecture
+          = @job.city
+      tr
+        th.arrow_box 生年月日
+        td = @job.birth
+      tr
+        th.arrow_box 年齢
+        td
+           = @job.age
+           |歳
+      tr
+        th.arrow_box 性別
+        td = @job.gender
+.tops-wrapper
+br
+h2.headline  職務経歴
+table.company
+     tbody
+      tr
+        th.arrow_box 入社日
+        th.arrow_box 退社日
+        th.arrow_box 所属先
+      tr
+        td = @job.hire_date_1
+        td = @job.retirement_date_1
+        td = @job.content_1
+      tr
+        td = @job.hire_date_2
+        td = @job.retirement_date_2
+        td = @job.content_2
+      tr
+        td = @job.hire_date_3
+        td = @job.retirement_date_3
+        td = @job.content_3
+
+.tops-wrapper
+br
+h2.headline  その他
+table.company
+     tbody
+      tr
+        th.arrow_box 資格
+      tr  
+        td = @job.requirements
+      tr
+        th.arrow_box アピールポイント
+      tr  
+        td = @job.appeal
+      tr
+        th.arrow_box 求職者要望
+      tr  
+        td = @job.desired
+      tr
+        th.arrow_box 備考
+      tr  
+        td = @job.remarks
+
+.tops-wrapper
+br
+h2.headline  面接希望可否
+.row 
+  .col-sm-4
+  .col-sm-2
+   .center
+    = link_to "興味がない", thanks_path, class:"btn btn-danger"
+  .col-sm-2
+   .center
+    = link_to "面接を希望する", new_contract_path , class:"btn btn-success"
+  .col-sm-4
+
+
+br/
+br/
+br/
+br/

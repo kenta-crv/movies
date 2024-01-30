@@ -72,18 +72,6 @@
         td.label-cell
           strong.label 必須
         td.arrow-box-cell
-          | ご利用プラン選択
-        td.responsive-cell
-         .input-container
-          = f.select(:plan,[\
-            ["お手頃プラン","お手頃プラン"],
-            ["スタンダードプラン","スタンダードプラン"],
-            ["エンタープライズプラン","エンタープライズプラン"],
-          ], include_blank:"選択してください")
-      tr
-        td.label-cell
-          strong.label 必須
-        td.arrow-box-cell
           | 募集人数
         td.responsive-cell
          .input-container

@@ -4,4 +4,7 @@ class TopsController < ApplicationController
 
     def lp 
     end
+
+    def thanks
+    end
 end
