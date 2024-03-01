@@ -1,0 +1,2 @@
+class Sfa < ApplicationRecord
+end

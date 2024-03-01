@@ -1,0 +1,31 @@
+- set_meta_tags  title: ''
+- set_meta_tags  description: ''
+
+- set_meta_tags noindex: true
+
+.row
+  br
+  br
+  table.company
+   tr
+     th 会社名
+     th 担当者
+     th メールアドレス
+     th 職種
+     th 編集/削除
+   - @sfas.each do |sfa|
+    tr
+     td = link_to sfa.co, sfa_path(sfa), clsss:"store"
+     td = sfa.name
+     td = sfa.business
+     td = sfa.meeting_day
+     td
+      - if admin_signed_in?
+       = link_to "編集", edit_sfa_path(sfa) , class:"btn btn-primary"
+       = link_to "削除", sfa_path(sfa) ,method: :delete,  data: { confirm: '本当に削除しますか？'}, class:"btn btn-danger"
+      br
+
+  br
+    hr.line
+    br
+    = paginate(@sfas)

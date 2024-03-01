@@ -1,0 +1,165 @@
+ .tops-wrapper
+   h2.headline
+     | 顧客情報詳細 
+     = link_to "編集", edit_sfa_path(@sfa) , class:"btn btn-primary"
+     = link_to "削除", sfa_path(@sfa) ,method: :delete,  data: { confirm: '本当に削除しますか？'}, class:"btn btn-danger"
+ 
+ table.company.responsive-table
+      colgroup
+         col width="10%"
+         col width="20%"
+         col width="70%"
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社名
+        td.responsive-cell
+         .input-container
+          = f.text_field :co
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 代表者名
+        td.responsive-cell
+         .input-container
+           = f.text_field :name
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 電話番号
+        td.responsive-cell
+         .input-container
+          = f.phone_field :tel
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 住所
+        td.responsive-cell
+         .input-container
+          = f.text_field :address
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社URL
+        td.responsive-cell
+         .input-container
+          = f.url_field :url
+      tr
+        td.label-cell
+          strong.label.label-blue あれば必須
+        td.arrow-box-cell
+          | 求人票（URLの場合）
+        td.responsive-cell
+         .input-container
+          = f.url_field :recruit_url
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 採用予定職種
+        td.responsive-cell
+         .input-container
+          = f.text_field :business
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ①質問に対するアンサー
+        td.responsive-cell
+         .input-container
+          = f.text_area :first_question
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ②質問に対するアンサー
+        td.responsive-cell
+         .input-container
+          = f.text_area :second_question
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ③質問に対するアンサー
+        td.responsive-cell
+         .input-container
+          = f.text_area :third_question
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 備考
+        td.responsive-cell
+         .input-container
+          = f.text_area :remarks
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 商談日
+        td.responsive-cell
+         .input-container
+          = f.datetime_field :meeting_day
+
+
+ h2.headline  
+  | 進捗情報
+ table.company[width="100%"]
+  = form_for([@sfa, @progress], url: sfa_progresses_path(sfa_id: @sfa)) do |f|
+    tbody
+    col[width="10%"]
+    col[width="15%"]
+    col[width="15%"]
+    col[width="42%"]
+    col[width="8%"]
+      tr 
+       th ステータス
+       th 最終更新日
+       th 次回提案日
+       th コメント
+       th 削除
+      tr.ceter
+       td
+        = f.select(:status,[\
+              ["",""],\
+              ["不在","不在"],\
+              ["見込低","見込低"],\
+              ["見込中","見込中"],\
+              ["見込高","見込高"],\
+              ["契約","契約"],\
+              ["連絡不通","連絡不通"],\
+              ["設置NG","設置NG"],\
+          ])
+       td
+       td
+        = f.datetime_field :next
+       td
+        = f.text_area :body
+       td
+      tr 
+          td[colspan="6"]
+           .center
+            = f.submit "登録",class:"btn btn-primary"
+ - @sfa.progresses.each do |progress|
+      table.company[width="100%"]
+       col[width="10%"]
+       col[width="15%"]
+       col[width="15%"]
+       col[width="42%"]
+       col[width="8%"]
+       tr.center
+        td
+          = progress.status
+        td
+          = progress.created_at.strftime("%Y年%m月%d日")
+        td
+          = progress&.next&.strftime("%Y年%m月%d日 %-H時%-M分")
+        td
+          = progress.body
+        td
+          = link_to "削除", sfa_progress_path(@sfa, progress), method: :delete, data: {confirm:"本当に削除しますか？"}, class:"btn btn-danger"

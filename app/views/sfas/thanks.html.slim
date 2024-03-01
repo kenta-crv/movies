@@ -1,0 +1,23 @@
+br
+ .tops-wrapper
+    h2.headline
+       | 登録が完了しました。
+    p.center 
+     = link_to "https://sale-s.pro/sfas/#{@sfa.id}", sfa_path(@sfa)
+     br/
+     | googleカレンダーの詳細ページには当URLを貼り付けするのみで問題ございません。
+
+
+
+ .center
+  = link_to "トップページへ戻る", "/", class:"btn btn-primary"
+br
+br
+
+script[async src="https://www.googletagmanager.com/gtag/js?id=AW-858090558"]
+script
+  |  window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-858090558');
+script
+  |  gtag('event', 'conversion', {'send_to': 'AW-585627916/TzzVCIjG_qQDEIzyn5cC'});
+script
+  | fbq('track', 'CompleteRegistration');

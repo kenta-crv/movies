@@ -1,0 +1,119 @@
+ - if @sfa.errors.any? 
+  strong 入力内容にエラーがあります
+  ul
+    - @sfa.errors.each do |attr, msg|
+      li= msg
+    br
+
+ table.company.responsive-table
+      colgroup
+         col width="10%"
+         col width="20%"
+         col width="70%"
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社名
+        td.responsive-cell
+         .input-container
+          = f.text_field :co
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 代表者名
+        td.responsive-cell
+         .input-container
+           = f.text_field :name
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 電話番号
+        td.responsive-cell
+         .input-container
+          = f.phone_field :tel
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 住所
+        td.responsive-cell
+         .input-container
+          = f.text_field :address
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | メールアドレス
+        td.responsive-cell
+         .input-container
+          = f.text_field :email
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社URL
+        td.responsive-cell
+         .input-container
+          = f.url_field :url
+      tr
+        td.label-cell
+          strong.label.label-blue あれば必須
+        td.arrow-box-cell
+          | 求人票（URLの場合）
+        td.responsive-cell
+         .input-container
+          = f.url_field :recruit_url
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 採用予定職種
+        td.responsive-cell
+         .input-container
+          = f.text_field :business
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ①質問に対するアンサー
+        td.responsive-cell
+         .input-container
+          = f.text_area :first_question
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ②質問に対するアンサー
+        td.responsive-cell
+         .input-container
+          = f.text_area :second_question
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ③質問に対するアンサー
+        td.responsive-cell
+         .input-container
+          = f.text_area :third_question
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 備考
+        td.responsive-cell
+         .input-container
+          = f.text_area :remarks
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 商談日
+        td.responsive-cell
+         .input-container
+          = f.datetime_field :meeting_day
+      tr
+        td colspan="3"
+          = f.submit "確認", class:"btn btn-primary"

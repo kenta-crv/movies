@@ -1,0 +1,137 @@
+- set_meta_tags  title: ''
+- set_meta_tags  description: ''
+
+=  form_for @sfa, url: thanks_sfas_path(@sfa) do |f|
+  br
+  br
+  .tops-wrapper
+    h2.headline
+      | お見積もり確認フォーム
+  table.company.responsive-table
+      colgroup
+         col width="10%"
+         col width="20%"
+         col width="70%"
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 会社名
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :co
+          = @sfa.co
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 担当者名
+        td.responsive-cell
+         .input-container
+         = f.hidden_field :name
+         = @sfa.name
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 電話番号
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :tel
+          = @sfa.tel
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 住所
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :address
+          = @sfa.address
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | メールアドレス
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :email
+          = @sfa.address
+      tr
+        td.label-cell
+          strong.label あれば必須
+        td.arrow-box-cell
+          | 会社URL
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :url
+          = @sfa.url
+      tr
+        td.label-cell
+          strong.label.label-blue あれば必須
+        td.arrow-box-cell
+          | 求人ページURL
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :recruit_url
+          = @sfa.recruit_url
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 採用予定職種
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :business
+          = @sfa.business
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ①質問に対するアンサー
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :first_question
+          = @sfa.first_question
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ②質問に対するアンサー
+          br
+          |
+        td.responsive-cell
+         .input-container
+         = f.hidden_field :second_question
+         = @sfa.second_question
+         | 人
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | ③質問に対するアンサー
+        td.responsive-cell
+         .input-container
+         = f.hidden_field :third_question
+         = @sfa.third_question
+      tr
+        td.label-cell
+          strong.label.label-blue 任意
+        td.arrow-box-cell
+          | 備考
+        td.responsive-cell
+         .input-container
+          = f.hidden_field :remarks
+          = @sfa.remarks
+      tr
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell
+          | 商談日
+        td.responsive-cell
+          .input-container
+           = f.hidden_field :meeting_day
+      tr
+       td colspan="3"
+        .center
+         = f.submit "登録", class:"btn btn-primary", data: {behavior: "fb-track"}
