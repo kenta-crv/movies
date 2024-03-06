@@ -10,7 +10,7 @@ Rails.application.configure do
   domain: 'c-are.link',
   port: 587,
   user_name: 'info@c-are.link',
-  password: 'Cw#SU1XC',
+  password: 'yL4meV#3333',
   authentication: 'plain',
   enable_starttls_auto: true
   }
