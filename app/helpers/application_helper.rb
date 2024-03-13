@@ -1,9 +1,9 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: "営業・販売に特化した人材紹介なら『セールスプロ』",
-      title:"<%= yield(:title) | セールスプロ' %>",
-      description: "営業・販売に特化した人材紹介なら『セールスプロ』",
+      site: "介護専門転職なら『ケアリンク』",
+      title:"<%= yield(:title) | ケアリンク' %>",
+      description: "介護専門転職なら『ケアリンク』",
       canonical: request.original_url,  # 優先されるurl
       charset: "UTF-8",
       reverse: true,

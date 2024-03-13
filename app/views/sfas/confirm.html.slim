@@ -56,7 +56,7 @@
         td.responsive-cell
          .input-container
           = f.hidden_field :email
-          = @sfa.address
+          = @sfa.email
       tr
         td.label-cell
           strong.label あれば必須
@@ -131,6 +131,7 @@
         td.responsive-cell
           .input-container
            = f.hidden_field :meeting_day
+           = @sfa.meeting_day
       tr
        td colspan="3"
         .center

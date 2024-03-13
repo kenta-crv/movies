@@ -16,12 +16,4 @@ class ContractMailer < ActionMailer::Base
     end
   end
 
-  def client_email(contract)
-    @contract = contract
-    mail bcc: Company.all.map{|company| company.mail}
-    mail(subject: '【ケアリンク】') do |format|
-      format.text
-    end
-  end
-
 end
