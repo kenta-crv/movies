@@ -1,3 +1,3 @@
 class Contract < ApplicationRecord
-    has_many :progresses
+    #has_many :progresses
 end

@@ -16,7 +16,7 @@
           | 会社名
         td.responsive-cell
          .input-container
-          = f.text_field :co
+          = @sfa.co
       tr
         td.label-cell
           strong.label 必須
@@ -24,7 +24,7 @@
           | 代表者名
         td.responsive-cell
          .input-container
-           = f.text_field :name
+           = @sfa.name
       tr
         td.label-cell
           strong.label 必須
@@ -32,7 +32,7 @@
           | 電話番号
         td.responsive-cell
          .input-container
-          = f.phone_field :tel
+          = @sfa.tel
       tr
         td.label-cell
           strong.label 必須
@@ -40,7 +40,7 @@
           | 住所
         td.responsive-cell
          .input-container
-          = f.text_field :address
+          = @sfa.address
       tr
         td.label-cell
           strong.label 必須
@@ -48,7 +48,7 @@
           | 会社URL
         td.responsive-cell
          .input-container
-          = f.url_field :url
+          = @sfa.url
       tr
         td.label-cell
           strong.label.label-blue あれば必須
@@ -56,7 +56,7 @@
           | 求人票（URLの場合）
         td.responsive-cell
          .input-container
-          = f.url_field :recruit_url
+          = @sfa.recruit_url
       tr
         td.label-cell
           strong.label 必須
@@ -64,7 +64,7 @@
           | 採用予定職種
         td.responsive-cell
          .input-container
-          = f.text_field :business
+          = @sfa.business
       tr
         td.label-cell
           strong.label 必須
@@ -72,7 +72,7 @@
           | ①質問に対するアンサー
         td.responsive-cell
          .input-container
-          = f.text_area :first_question
+          = @sfa.first_question
       tr
         td.label-cell
           strong.label 必須
@@ -80,7 +80,7 @@
           | ②質問に対するアンサー
         td.responsive-cell
          .input-container
-          = f.text_area :second_question
+          = @sfa.second_question
       tr
         td.label-cell
           strong.label 必須
@@ -88,7 +88,7 @@
           | ③質問に対するアンサー
         td.responsive-cell
          .input-container
-          = f.text_area :third_question
+          = @sfa.third_question
       tr
         td.label-cell
           strong.label 必須
@@ -96,7 +96,7 @@
           | 備考
         td.responsive-cell
          .input-container
-          = f.text_area :remarks
+          = @sfa.remarks
       tr
         td.label-cell
           strong.label 必須
@@ -104,7 +104,7 @@
           | 商談日
         td.responsive-cell
          .input-container
-          = f.datetime_field :meeting_day
+          = @sfa.meeting_day
 
 
  h2.headline  

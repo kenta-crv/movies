@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_24_134044) do
+ActiveRecord::Schema.define(version: 2024_03_19_042357) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -169,6 +169,7 @@ ActiveRecord::Schema.define(version: 2024_02_24_134044) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sfa_id"
     t.index ["contract_id"], name: "index_progresses_on_contract_id"
   end
 

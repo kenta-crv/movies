@@ -1,10 +1,10 @@
 class ProgressesController < ApplicationController
-    before_action :load_contract
+    before_action :load_sfa
     before_action :load_progress, only: [:edit,:update,:show,:destroy]
     #before_action :authenticate_user!
 
-    def load_contract
-      @contract = Contract.find(params[:contract_id])
+    def load_sfa
+      @sfa = Sfa.find(params[:sfa_id])
       @progress = Progress.new
     end
 
@@ -16,24 +16,27 @@ class ProgressesController < ApplicationController
     end
 
     def create
-      @progress = @contract.progresses.new(progress_params)
+      @progress = @sfa.progresses.new(progress_params)
       if @progress.save
-  			redirect_to contract_path(@contract)
-  		end
+        redirect_to sfa_path(@sfa)
+      else
+        logger.debug @progress.errors.full_messages
+        # 適切なエラー処理（例: フォームを再表示するなど）
+      end
     end
 
   	def destroy
-  		@contract = Contract.find(params[:contract_id])
-  		@progress = @contract.progresses.find(params[:id])
+  		@sfa = Sfa.find(params[:sfa_id])
+  		@progress = @sfa.progresses.find(params[:id])
   		@progress.destroy
-  		redirect_to contract_path(@contract)
+  		redirect_to sfa_path(@sfa)
   	end
 
   	 def update
-      @progress = Progress.find(params[:contract_id])
-      @progress = @contract.progresses.find(params[:id])
+      @progress = Progress.find(params[:sfa_id])
+      @progress = @sfa.progresses.find(params[:id])
       if @progress.update(progress_params)
-         redirect_to contract_path(@contract)
+         redirect_to sfa_path(@sfa)
       else
           render 'edit'
       end
