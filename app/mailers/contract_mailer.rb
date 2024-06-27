@@ -1,8 +1,8 @@
 class ContractMailer < ActionMailer::Base
-  default from: "info@c-are.link"
+  default from: "info@sale-s.pro"
   def received_email(contract)
     @contract = contract
-    mail to: "info@c-are.link"
+    mail to: "info@sale-s.pro"
     mail(subject: '【ケアリンク】約款へ同意いただきありがとうございました。') do |format|
       format.text
     end

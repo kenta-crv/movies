@@ -1,8 +1,8 @@
 class SfaMailer < ActionMailer::Base
-  default from: "info@c-are.link"
+  default from: "info@sale-s.pro"
   def received_email(sfa)
     @sfa = sfa
-    mail to: "info@c-are.link"
+    mail to: "info@sale-s.pro"
     mail(subject: '商談日時決定') do |format|
       format.text
     end
