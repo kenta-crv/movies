@@ -1,9 +1,16 @@
-br
- .tops-wrapper
-    h2.headline
-       | 送信が完了しました。今後の流れをご確認下さい。
+.tops-wrapper
+ h2.headline
+  | 送信が完了しました。以下よりLINE追加を頂くとやり取りがスムーズになります。
+ .center 
+  = image_tag "line.webp", width: "350px";
+  br/
+  = link_to "LINEを追加する", "https://line.me/R/ti/p/@522jmsbm?from=page&searchId=522jmsbm", class:"btn btn-success"
 
- ul.flow.center
+.tops-wrapper
+ h2.headline
+  | 今後の流れをご確認下さい。
+
+ul.flow.center
   li
     dl
       dt
