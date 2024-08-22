@@ -5,24 +5,31 @@
   br
   table.company
    tr
-     th id
-     th 都道府県
+     th お名前
+     th 電話番号
+     th 資格
+     th 就業年数
+     th 対象エリア
+     th 転職希望時期
+     th 評価ランク
      th 登録日
      th 編集｜削除
    - @jobs.each do |job|
     tr
-     td = link_to job.id, job_path(job), clsss:"store"
-     td = job.prefecture
+     td = link_to job.name, job_path(job), clsss:"store"
+     td = job.tel
+     td = job.qualification
+     td = job.work_history
+     td = job.period
+     td = job.area_hope
+     td = job.quality_rank
      td = job.created_at
      td 
-      
                = link_to '編集  ', edit_job_path(job.id)
                = link_to '削除',
                 job_path(job),
                 method: :delete,
                 data: { confirm: '本当に削除しますか？'}
   br
-    hr.line
-    br
     = paginate(@jobs)
 

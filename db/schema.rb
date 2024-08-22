@@ -112,9 +112,6 @@ ActiveRecord::Schema.define(version: 2024_03_19_042357) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "recruit_url_3"
-    t.string "pdf_2"
-    t.string "pdf_3"
     t.string "person_email"
     t.string "recruit_url_2"
     t.string "pdf"
@@ -140,23 +137,21 @@ ActiveRecord::Schema.define(version: 2024_03_19_042357) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string "prefecture"
-    t.string "city"
+    t.string "name"
+    t.string "tel"
+    t.string "email"
     t.string "birth"
     t.string "gender"
-    t.string "age"
-    t.string "hire_date_1"
-    t.string "retirement_date_1"
-    t.string "content_1"
-    t.string "hire_date_2"
-    t.string "retirement_date_2"
-    t.string "content_2"
-    t.string "hire_date_3"
-    t.string "retirement_date_3"
-    t.string "content_3"
-    t.string "requirements"
-    t.string "appeal"
-    t.string "desired"
+    t.string "city"
+    t.string "qualification"
+    t.string "period"
+    t.string "work_history"
+    t.string "situation"
+    t.string "area_hope"
+    t.string "course_hope"
+    t.string "quality_rank"
+    t.string "contact_tool"
+    t.string "interview"
     t.string "remarks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -171,24 +166,6 @@ ActiveRecord::Schema.define(version: 2024_03_19_042357) do
     t.datetime "updated_at", null: false
     t.integer "sfa_id"
     t.index ["contract_id"], name: "index_progresses_on_contract_id"
-  end
-
-  create_table "recruits", force: :cascade do |t|
-    t.string "co"
-    t.string "name"
-    t.string "tel"
-    t.string "address"
-    t.string "email"
-    t.string "url"
-    t.string "recruit_url"
-    t.string "business"
-    t.string "first_question"
-    t.string "second_question"
-    t.string "third_question"
-    t.string "remarks"
-    t.datetime "meeting_day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "sfas", force: :cascade do |t|

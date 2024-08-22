@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-    before_action :authenticate_admin!, except: [:show]
     def index
       @jobs = Job.order(created_at: "DESC").page(params[:page])
     end
@@ -15,11 +14,18 @@ class JobsController < ApplicationController
     def create
       @job = Job.new(job_params)
       if @job.save
-        redirect_to jobs_path
+        JobMailer.received_email(@job).deliver_now # 管理者に通知
+        JobMailer.send_email(@job).deliver_now # 送信者に通知
+        redirect_to thanks_jobs_path # thanksページにリダイレクト
       else
         render 'new'
       end
     end
+  
+    def thanks
+      # thanksページを表示するだけ
+    end
+  
   
     def edit
       @job = Job.find(params[:id])
@@ -43,23 +49,25 @@ class JobsController < ApplicationController
     private
     def job_params
       params.require(:job).permit(
-        :prefecture,
-        :city,
+        :name,
+        :tel,
+        :email,
         :birth,
         :gender,
-        :age,
-        :hire_date_1,
-        :retirement_date_1,
-        :content_1,
-        :hire_date_2,
-        :retirement_date_2,
-        :content_2,
-        :hire_date_3,
-        :retirement_date_3,
-        :content_3,
-        :requirements,
-        :appeal,
-        :desired,
+        :city,
+        :qualification,
+        :period,
+  
+        :work_history,
+  
+        :area_hope,
+        :course_hope,
+  
+        :quality_rank,
+
+        :contact_tool,
+        :interview,
+  
         :remarks,
         )
     end

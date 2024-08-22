@@ -25,7 +25,11 @@ Rails.application.routes.draw do
     end
 
     resources :columns
-    resources :jobs
+    resources :jobs do 
+     collection do
+       get 'thanks' # thanksアクション用のルートを追加
+     end
+    end
 
     resources :sfas do
       resources :progresses
