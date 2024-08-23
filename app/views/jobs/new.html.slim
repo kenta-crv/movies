@@ -5,46 +5,73 @@
 
 = form_for @job do |f|
    table.company
-     tbody
+      colgroup
+        col.col-1
+        col.col-2
+        col.col-3
       tr
-        th.arrow_box お名前（フルネーム）
-      tr 
-        td = text_field :job, :name
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell お名前（フルネーム）
+        td.responsive-cell
+         .input-container
+           = text_field :job, :name
       tr
-        th.arrow_box 携帯番号
-      tr 
-        td = text_field :job, :tel
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell 携帯番号
+        td.responsive-cell
+         .input-container
+           = text_field :job, :tel
       tr
-        th.arrow_box メールアドレス
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell メールアドレス
+        td.responsive-cell
+         .input-container
+           = email_field :job, :email
       tr 
-        td = email_field :job, :email
-      tr 
-        th.arrow_box 生年月日
-      tr 
-        td = date_field :job, :birth
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell 生年月日
+        td.responsive-cell
+         .input-container
+           = date_field :job, :birth
       tr
-        th.arrow_box 性別
-      tr 
-        td = f.select(:gender,[\
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell 性別
+        td.responsive-cell
+         .input-container
+           = f.select(:gender,[\
             ["男","男"],\
             ["女","女"],\
            ],include_blank: "選択してください")
       tr
-        th.arrow_box お住まいの市区町村
-      tr 
-        td = text_field :job, :city
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell お住まいの市区町村
+        td.responsive-cell
+         .input-container
+           = text_field :job, :city
       tr
-        th.arrow_box 介護資格
-      tr 
-        td = f.select(:qualification,[\
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell 介護資格
+        td.responsive-cell
+         .input-container
+           = f.select(:qualification,[\
             ["無資格","無資格"],\
             ["初任者研修・無資格","初任者研修・無資格"],\
             ["介護福祉士","介護福祉士"],\
            ],include_blank: "選択してください")
       tr
-        th.arrow_box 転職希望時期
-      tr
-        td = f.select(:period,[\
+        td.label-cell
+          strong.label 必須
+        td.arrow-box-cell 転職希望時期
+        td.responsive-cell
+         .input-container
+           = f.select(:period,[\
             ["すぐにでも","すぐにでも"],\
             ["1ヶ月以内","1ヶ月以内"],\
             ["2ヶ月以内","2ヶ月以内"],\
@@ -52,4 +79,4 @@
            ],include_blank: "選択してください")
 
       tr
-        td.center = f.submit '送信する', class:"btn btn-primary"
+        td.center[colspan="3"] = f.submit '送信する', class:"btn btn-primary"
