@@ -1,7 +1,7 @@
 - set_meta_tags noindex: true
 
 .tops-wrapper
-  h2.headline  求職者情報作成
+  h2.headline  求職者送信フォーム
 
 = form_for @job do |f|
    table.company
@@ -33,11 +33,11 @@
       tr 
         td.label-cell
           strong.label 必須
-        td.arrow-box-cell 生年月日
+        td.arrow-box-cell 年齢
         td.responsive-cell
          .input-container
-           = date_field :job, :birth
-      tr
+           = text_field :job, :birth
+      /tr
         td.label-cell
           strong.label 必須
         td.arrow-box-cell 性別
@@ -61,9 +61,9 @@
         td.responsive-cell
          .input-container
            = f.select(:qualification,[\
-            ["無資格","無資格"],\
-            ["初任者研修・無資格","初任者研修・無資格"],\
             ["介護福祉士","介護福祉士"],\
+            ["初任者研修・無資格","初任者研修・無資格"],\
+            ["無資格","無資格"],\
            ],include_blank: "選択してください")
       tr
         td.label-cell
