@@ -193,7 +193,7 @@
         text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff, 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff;
         @media(max-width: 748px) {
           text-align:center;
-          font-size:10.0vw;
+          font-size:8.0vw;
           line-height:18vw;
         }
         
@@ -930,6 +930,12 @@ table.company {
     p{
       font-size:16px;
       line-height:2.0;
+    }
+    @media only screen and (max-width: 600px) {
+      p.center {
+        font-size: 12px; /* スマートフォン用のフォントサイズ */
+        line-height: 24px;
+      }
     }
     strong{
       font-size: 3rem;
@@ -1747,36 +1753,63 @@ table.company {
 }
 
 
-/*テーブル共通*/
+/* テーブル共通 */
 table.review {
   border: 1px solid #aaa;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 6px;
   overflow: hidden;
-  .font-middle{font-size:1.7rem;}
-  .red{color:red;}
+}
+
+table.review th, table.review td {
+  background: #f4f4f4;
+  padding: 10px;
+  line-height: 3rem;
+}
+
+table.review .title {
+  background-color: $main_color;
+  font-size: 1.5vw;
+  color: white;
+}
+
+table.review td {
+  vertical-align: middle;
+  text-align: left;
+  overflow: visible;
+  position: relative;
+  color: #333;
+  font-size: 1.3vw;
+}
+
+/* スマホ用調整 */
+@media only screen and (max-width: 600px) {
+  table.review {
+    width: 100%; /* テーブルの幅を100%に */
+    margin: 0 auto; /* 中央揃え */
+  }
+
+  th.title {
+    font-size: 18px !important;
+  }
 
   th, td {
-    background: #f4f4f4;
-    padding: 10px;
-    line-height:3rem; }
-  .title{
-    background-color:$main_color;
-    font-size: 1.5vw;
-    color:white;}
-  
-  td {
-     vertical-align: middle;
-     text-align: left;
-     overflow: visible;
-     position: relative;
-     color: #333;
-     font-size: 1.3vw;
-     }
+    font-size: 12px !important; /* スマホ向けに文字サイズを調整 */
+    line-height: 18px !important; /* 行の高さを調整 */
+  }
+
+  /* 画像のサイズをスマホ向けに調整 */
+  th img {
+    width: 80%; /* スマホ用に画像サイズを調整 */
+    display: block;
+    margin: 0 auto; /* 画像も中央揃え */
+  }
+
+  table.left, table.right {
+    margin: 5px auto; /* 左右の余白をスマホ用に中央揃え */
+  }
 }
-table.left {margin:5px 0px 5px 50px;}
-table.right {margin:5px 50px 5px 0px;}
 
 
 .block-image {
@@ -1864,4 +1897,18 @@ table.free {
   /* 背景色を追加 */
 
   p {font-size: 1.5vw;}
+}
+
+
+.responsive-image {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .responsive-image {
+    width: 100%;
+  }
 }
