@@ -51,21 +51,18 @@ table.company.responsive-table
           = f.email_field :email
       tr
         td.label-cell
-          strong.label.label-blue 任意
-        td.arrow-box-cell
-          | 求人ページURL
-        td.responsive-cell
-         .input-container
-          = f.text_field :url
-      tr
-        td.label-cell
           strong.label 必須
         td.arrow-box-cell
-          | 募集人数
+          | 依頼予定金額
         td.responsive-cell
          .input-container
-          = f.text_field :contents
-          | 人
+          = f.select(:contents,[\
+            ["30万円以下","30万円以下"],\
+            ["31万円〜60万円","31万円〜60万円"],\
+            ["61万円〜100万円","61万円〜100万円"],\
+            ["100万円以上","100万円以上"],\
+            ["相談して決めたい","相談して決めたい"],\
+           ],include_blank: "選択してください")
       tr
         td.label-cell
           strong.label 必須
@@ -74,10 +71,10 @@ table.company.responsive-table
         td.responsive-cell
          .input-container
           = f.select(:important,[\
-            ["即戦力","即戦力"],\
-            ["スピード採用","スピード採用"],\
-            ["人材の質と金額のバランス","人材の質と金額のバランス"],\
-            ["価格の安さ","価格の安さ"],\
+            ["実績","実績"],\
+            ["スピード感","スピード感"],\
+            ["金額感","金額感"],\
+            ["コンサルティング力","コンサルティング力"],\
             ["その他","その他"],\
            ],include_blank: "選択してください")
       tr
@@ -97,7 +94,7 @@ table.company.responsive-table
         td.label-cell
           strong.label.label-blue 任意
         td.arrow-box-cell
-          | 備考
+          | 依頼内容詳細
         td.responsive-cell
          .input-container
           = f.text_area :remarks

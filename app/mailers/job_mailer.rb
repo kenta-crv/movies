@@ -1,8 +1,8 @@
 class JobMailer < ActionMailer::Base
-  default from: "info@c-are.link"
+  default from: "movies@factoru.jp"
   def received_email(job)
     @job = job
-    mail to: "info@c-are.link"
+    mail to: "movies@factoru.jp"
     mail(subject: '介護転職の『ケアリンク』にお問い合わせ頂きありがとうございます。') do |format|
       format.text
     end

@@ -7,9 +7,9 @@ Rails.application.configure do
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
   address: 'smtp.lolipop.jp',
-  domain: 'c-are.link',
+  domain: 'factoru.jp',
   port: 587,
-  user_name: 'info@c-are.link',
+  user_name: 'movies@factoru.jp',
   password: ENV['EMAIL_PASSWORD'],
   authentication: 'plain',
   enable_starttls_auto: true

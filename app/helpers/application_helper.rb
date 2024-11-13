@@ -1,9 +1,9 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: "介護専門転職なら『ケアリンク』",
-      title:"<%= yield(:title) | ケアリンク' %>",
-      description: "介護専門転職なら『ケアリンク』",
+      site: "映像制作・映像編集の一括見積なら『ムービーズ』",
+      title:"<%= yield(:title) | ムービーズ' %>",
+      description: "映像制作・映像編集の一括見積なら『ムービーズ』",
       canonical: request.original_url,  # 優先されるurl
       charset: "UTF-8",
       reverse: true,
